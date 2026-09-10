@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="description" content="Official site of the Riverwood Trails Homeowners' Association — a 76-home neighborhood in Kings Mills, Ohio. Find HOA dues info, community guidelines, governing documents, and board contacts.">
 <meta property="og:title" content="Riverwood Trails HOA — Kings Mills, Ohio">
-<meta property="og:description" content="A peaceful, close-knit community of 76 homes in Kings Mills, Ohio — along the Little Miami River and minutes from Kings Island.">
+<meta property="og:description" content="Official site of the Riverwood Trails Homeowners' Association — a 76-home neighborhood in Kings Mills, Ohio. Find HOA dues info, community guidelines, governing documents, and board contacts.">
 <meta property="og:type" content="website">
 <meta property="og:image" content="images/hero.jpg">
 <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%230e1d14'/%3E%3Cpath d='M10 24c4 4.5 8 4.5 12 0s8-4.5 12 0 8 4.5 12 0 8-4.5 8 0' stroke='%238fd46e' stroke-width='4' fill='none' stroke-linecap='round'/%3E%3Cpath d='M10 35c4 4.5 8 4.5 12 0s8-4.5 12 0 8 4.5 12 0 8-4.5 8 0' stroke='%23f2f6f0' stroke-width='4' fill='none' stroke-linecap='round' opacity='.75'/%3E%3Cpath d='M10 46c4 4.5 8 4.5 12 0s8-4.5 12 0 8 4.5 12 0 8-4.5 8 0' stroke='%23f2f6f0' stroke-width='4' fill='none' stroke-linecap='round' opacity='.4'/%3E%3C/svg%3E">
@@ -13,417 +13,36 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-<style>
-  :root{
-    --forest-deep:#0e1d14;
-    --forest:#16301f;
-    --moss:#22492f;
-    --leaf:#8fd46e;
-    --leaf-deep:#2f7a44;
-    --sage:#eaf1ea;
-    --sage-2:#dfe9df;
-    --paper:#ffffff;
-    --cream:#f5f8f4;
-    --ink:#12201a;
-    --muted:#5f6f65;
-    --line:rgba(18,32,26,.12);
-    --line-dark:rgba(255,255,255,.12);
-    --amber:#e0a93a;
-    /* aliases used by the calendar + faq fragments */
-    --river:#3f8f5a;
-    --clay:#e0a93a;
-    --radius:18px;
-    --chamfer:34px;
-  }
-  html{scroll-behavior:smooth; scroll-padding-top:90px;}
-  *{box-sizing:border-box; margin:0; padding:0;}
-  body{background:var(--paper); color:var(--ink); font-family:'Manrope',-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif; line-height:1.65; -webkit-font-smoothing:antialiased;}
-  h1,h2,h3,h4{font-weight:800; letter-spacing:-.025em; line-height:1.1; color:var(--forest-deep);}
-  h2{font-size:clamp(1.9rem,3.4vw,2.9rem);}
-  h2 em, h1 em{font-style:normal; color:var(--leaf-deep);}
-  .dark h2 em, .dark h1 em{color:var(--leaf);}
-  h3{font-size:1.25rem; letter-spacing:-.015em;}
-  p{color:#3f4d45;}
-  a{color:inherit;}
-  img{max-width:100%; display:block;}
-  .wrap{max-width:1480px; margin:0 auto; padding:0 clamp(20px,4vw,48px);}
-  .band{padding:clamp(72px,8vw,112px) 0;}
-  .band.sage{background:var(--sage);}
-  .band.dark{background:var(--forest-deep); color:#e9f0ea;}
-  .band.dark p{color:rgba(233,240,234,.78);}
-  .band.dark h2, .band.dark h3, .band.dark h4{color:#fff;}
-
-  /* tag / eyebrow pill */
-  .tag, .eyebrow{display:inline-flex; align-items:center; gap:8px; background:rgba(18,32,26,.08); color:var(--forest); border-radius:999px; padding:6px 14px; font-size:.72rem; font-weight:700; letter-spacing:.12em; text-transform:uppercase; margin-bottom:22px;}
-  .tag::before, .eyebrow::before{content:""; width:6px; height:6px; border-radius:50%; background:var(--leaf-deep);}
-  .dark .tag, .dark .eyebrow{background:rgba(255,255,255,.1); color:#dfe9df;}
-  .dark .tag::before, .dark .eyebrow::before{background:var(--leaf);}
-
-  .section-head{max-width:720px; margin-bottom:48px;}
-  .section-head p{margin-top:16px; font-size:1.06rem;}
-  .head-row{display:flex; align-items:flex-end; justify-content:space-between; gap:32px; flex-wrap:wrap; margin-bottom:48px;}
-  .head-row .section-head{margin-bottom:0;}
-  .head-row .aside{max-width:360px; color:var(--muted); font-size:.95rem; padding-bottom:6px;}
-
-  /* buttons */
-  .btn{display:inline-flex; align-items:center; gap:14px; padding:7px 7px 7px 24px; border-radius:999px; background:var(--leaf); color:var(--forest-deep); font-weight:700; font-size:.92rem; text-decoration:none; border:0; cursor:pointer; font-family:inherit; letter-spacing:-.005em; transition:transform .2s cubic-bezier(.2,.7,.3,1), box-shadow .2s ease, background .2s;}
-  .btn .cap{width:36px; height:36px; border-radius:50%; background:var(--forest-deep); color:var(--leaf); display:inline-flex; align-items:center; justify-content:center; flex-shrink:0; transition:transform .25s ease;}
-  .btn .cap svg{width:15px; height:15px;}
-  .btn:hover{transform:translateY(-2px); box-shadow:0 14px 30px -14px rgba(14,29,20,.5);}
-  .btn:hover .cap{transform:rotate(-45deg);}
-  .btn-dark{background:var(--forest-deep); color:#fff;}
-  .btn-dark .cap{background:var(--leaf); color:var(--forest-deep);}
-  .btn-white{background:#fff; color:var(--forest-deep); border:1px solid var(--line);}
-  .btn-white .cap{background:var(--forest-deep); color:var(--leaf);}
-  .btn-clay{background:var(--leaf); color:var(--forest-deep);}
-  .btn-text{display:inline-flex; align-items:center; gap:10px; font-weight:700; font-size:.92rem; color:inherit; text-decoration:none; padding:10px 4px;}
-  .btn-text svg{width:14px; height:14px; transition:transform .2s;}
-  .btn-text:hover svg{transform:translate(3px,-3px);}
-  .btn-row{display:flex; align-items:center; gap:18px; flex-wrap:wrap; margin-top:32px;}
-
-  /* chamfered card */
-  .card{background:#fff; border:1px solid var(--line); border-radius:var(--radius); padding:34px 32px; position:relative; clip-path:polygon(0 0, calc(100% - var(--chamfer)) 0, 100% var(--chamfer), 100% 100%, 0 100%);}
-  .card.sage{background:var(--sage); border-color:transparent;}
-  .card.dark{background:var(--forest); border-color:transparent; color:#e9f0ea;}
-  .card.dark p{color:rgba(233,240,234,.78);}
-  .card.dark h3, .card.dark h4{color:#fff;}
-  .card h3{margin-bottom:12px;}
-  .card p{font-size:.96rem;}
-  .checks{list-style:none; margin-top:18px; display:flex; flex-direction:column; gap:10px;}
-  .checks li{display:flex; gap:12px; align-items:flex-start; font-size:.94rem; color:#2c3a32;}
-  .checks li a{text-decoration:none; font-weight:600; color:var(--forest-deep); border-bottom:1px solid var(--line); transition:border-color .15s;}
-  .checks li a:hover{border-color:var(--leaf-deep);}
-  .checks li::before{content:""; flex:none; width:18px; height:18px; margin-top:3px; border-radius:50%; background:var(--leaf-deep) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='white' stroke-width='3.2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M5 12.5l4.5 4.5L19 7.5'/%3E%3C/svg%3E") center/11px no-repeat;}
-  .card.dark .checks li{color:rgba(233,240,234,.85);}
-  .card.dark .checks li a{color:#fff; border-color:var(--line-dark);}
-  .card.dark .checks li::before{background-color:var(--leaf); background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%230e1d14' stroke-width='3.2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M5 12.5l4.5 4.5L19 7.5'/%3E%3C/svg%3E");}
-
-  .icon{width:52px; height:52px; border-radius:14px; background:var(--sage); color:var(--forest-deep); display:inline-flex; align-items:center; justify-content:center; margin-bottom:20px;}
-  .icon svg{width:26px; height:26px; stroke:currentColor; fill:none; stroke-width:1.7; stroke-linecap:round; stroke-linejoin:round;}
-
-  .grid3{display:grid; grid-template-columns:repeat(3,1fr); gap:24px;}
-  .grid2{display:grid; grid-template-columns:1fr 1fr; gap:24px;}
-
-  /* HEADER */
-  header{position:sticky; top:0; z-index:60; background:rgba(14,29,20,.86); backdrop-filter:blur(14px); -webkit-backdrop-filter:blur(14px); border-bottom:1px solid var(--line-dark); color:#fff;}
-  nav{display:flex; align-items:center; justify-content:space-between; gap:24px; height:76px;}
-  .brand{display:flex; align-items:center; gap:12px; text-decoration:none; color:#fff;}
-  .brand-mark{width:40px; height:40px; border-radius:12px; background:var(--forest); border:1px solid var(--line-dark); display:flex; align-items:center; justify-content:center; flex-shrink:0;}
-  .brand-mark svg{width:24px; height:24px;}
-  .brand-name{font-weight:800; font-size:1.02rem; letter-spacing:-.02em; line-height:1.1;}
-  .brand-name small{display:block; white-space:nowrap; font-weight:600; font-size:.64rem; letter-spacing:.12em; text-transform:uppercase; color:rgba(233,240,234,.6); margin-top:3px;}
-  .navlinks{display:flex; align-items:center; gap:4px; font-size:.9rem; font-weight:600;}
-  .navlinks > a, .navlinks .dd > button{white-space:nowrap; text-decoration:none; color:rgba(233,240,234,.82); padding:10px 14px; border-radius:999px; transition:color .15s, background .15s; background:none; border:0; font:inherit; cursor:pointer; display:inline-flex; align-items:center; gap:6px;}
-  .navlinks > a:hover, .navlinks .dd > button:hover, .navlinks .dd:focus-within > button{color:#fff; background:rgba(255,255,255,.08);}
-  .navlinks a.hot{color:var(--leaf); display:none;}
-  .dd{position:relative;}
-  .dd > button svg{width:12px; height:12px; transition:transform .2s;}
-  .dd:hover > button svg, .dd:focus-within > button svg{transform:rotate(180deg);}
-  .dd-menu{position:absolute; top:calc(100% + 10px); left:0; min-width:260px; background:#fff; color:var(--ink); border-radius:14px; border:1px solid var(--line); box-shadow:0 24px 50px -20px rgba(14,29,20,.45); padding:8px; opacity:0; visibility:hidden; transform:translateY(-6px); transition:opacity .18s, transform .18s, visibility .18s; z-index:70;}
-  .dd:hover .dd-menu, .dd:focus-within .dd-menu{opacity:1; visibility:visible; transform:none;}
-  .dd-menu a{display:flex; align-items:center; justify-content:space-between; gap:12px; padding:10px 12px; border-radius:9px; text-decoration:none; font-size:.88rem; font-weight:600; color:var(--forest-deep);}
-  .dd-menu a:hover{background:var(--sage);}
-  .dd-menu a span{font-size:.68rem; font-weight:700; letter-spacing:.08em; text-transform:uppercase; color:var(--muted);}
-  .nav-right{display:flex; align-items:center; gap:8px;}
-  .nav-right .btn{padding:6px 6px 6px 18px; font-size:.86rem;}
-  .nav-right .btn .cap{width:32px; height:32px;}
-  .nav-right .btn .cap svg{width:14px; height:14px;}
-
-  /* SEARCH */
-  .search-wrap{position:relative; display:flex; align-items:center;}
-  .search-toggle{background:none; border:1px solid var(--line-dark); cursor:pointer; width:40px; height:40px; border-radius:50%; display:flex; align-items:center; justify-content:center; color:#fff; transition:background .15s;}
-  .search-toggle:hover{background:rgba(255,255,255,.1);}
-  .search-toggle svg{width:17px; height:17px;}
-  .search-panel{position:absolute; top:calc(100% + 16px); right:0; width:360px; max-width:88vw; background:#fff; color:var(--ink); border:1px solid var(--line); border-radius:14px; box-shadow:0 24px 50px -18px rgba(14,29,20,.45); padding:10px; opacity:0; visibility:hidden; transform:translateY(-6px); transition:opacity .18s ease, transform .18s ease, visibility .18s ease; z-index:70;}
-  .search-panel.open{opacity:1; visibility:visible; transform:translateY(0);}
-  .search-input{width:100%; padding:12px 14px; border:1px solid var(--line); border-radius:10px; font-family:inherit; font-size:.92rem; background:var(--cream); color:var(--ink);}
-  .search-input:focus{outline:none; border-color:var(--leaf-deep);}
-  .search-results{max-height:340px; overflow-y:auto; margin-top:8px;}
-  .search-result{display:flex; flex-direction:column; gap:2px; padding:10px 12px; border-radius:9px; text-decoration:none; cursor:pointer;}
-  .search-result:hover, .search-result.active{background:var(--sage);}
-  .search-result .r-title{font-size:.9rem; color:var(--forest-deep); font-weight:600;}
-  .search-result .r-tag{font-size:.68rem; color:var(--leaf-deep); text-transform:uppercase; letter-spacing:.08em; font-weight:700;}
-  .search-empty{padding:14px 12px; font-size:.86rem; color:var(--muted); text-align:center;}
-
-  .menu-toggle{display:none; background:none; border:1px solid var(--line-dark); cursor:pointer; width:40px; height:40px; border-radius:50%; padding:0; flex-direction:column; align-items:center; justify-content:center; gap:5px;}
-  .menu-toggle span{display:block; width:18px; height:2px; background:#fff; border-radius:2px; transition:transform .2s ease, opacity .2s ease;}
-  .menu-toggle.open span:nth-child(1){transform:translateY(7px) rotate(45deg);}
-  .menu-toggle.open span:nth-child(2){opacity:0;}
-  .menu-toggle.open span:nth-child(3){transform:translateY(-7px) rotate(-45deg);}
-
-  /* HERO */
-  .hero{position:relative; min-height:min(92vh,880px); display:flex; align-items:center; overflow:hidden; isolation:isolate; color:#fff;}
-  .hero-bg{position:absolute; inset:0; z-index:-2;}
-  .hero-bg img{width:100%; height:100%; object-fit:cover; object-position:62% 50%; transform:scale(1.04); animation:heroZoom 18s ease-out forwards;}
-  @keyframes heroZoom{to{transform:scale(1);}}
-  .hero::after{content:""; position:absolute; inset:0; z-index:-1; background:linear-gradient(90deg, rgba(14,29,20,.93) 0%, rgba(14,29,20,.78) 38%, rgba(14,29,20,.28) 72%, rgba(14,29,20,.18) 100%), linear-gradient(180deg, rgba(14,29,20,.35) 0%, rgba(14,29,20,0) 30%, rgba(14,29,20,.55) 100%);}
-  .hero .wrap{width:100%; display:grid; grid-template-columns:minmax(0,680px) 1fr; gap:40px; align-items:end; padding-top:110px; padding-bottom:72px;}
-  .hero-mark{width:56px; height:56px; border-radius:16px; border:1px solid rgba(255,255,255,.25); display:flex; align-items:center; justify-content:center; margin-bottom:28px; background:rgba(255,255,255,.06);}
-  .hero-mark svg{width:30px; height:30px;}
-  .hero .tag{background:rgba(255,255,255,.12); color:#e9f0ea; margin-bottom:26px;}
-  .hero .tag::before{background:var(--leaf);}
-  .hero h1{color:#fff; font-size:clamp(2.6rem,5.4vw,4.6rem); line-height:1.02; letter-spacing:-.035em;}
-  .hero h1 em{color:var(--leaf);}
-  .hero p.lede{margin-top:24px; font-size:1.08rem; max-width:50ch; color:rgba(233,240,234,.86);}
-  .hero-rule{width:64px; height:2px; background:var(--leaf); margin-top:28px; opacity:.8;}
-  .stats{display:flex; flex-direction:column; gap:14px; justify-self:end; width:min(100%,360px);}
-  .stat{display:flex; align-items:center; justify-content:space-between; gap:20px; background:rgba(14,29,20,.66); backdrop-filter:blur(10px); -webkit-backdrop-filter:blur(10px); border:1px solid rgba(255,255,255,.14); border-radius:16px; padding:22px 26px; clip-path:polygon(0 0, calc(100% - 26px) 0, 100% 26px, 100% 100%, 0 100%);}
-  .stat b{display:block; font-size:.95rem; font-weight:800; color:#fff; line-height:1.2;}
-  .stat small{display:block; font-size:.8rem; color:rgba(233,240,234,.65); margin-top:3px;}
-  .stat strong{font-size:2.4rem; font-weight:800; letter-spacing:-.04em; color:#fff; line-height:1; white-space:nowrap;}
-  .stat strong span{color:var(--leaf); font-size:1.4rem; margin-left:2px;}
-  .scroll-cue{position:absolute; right:clamp(16px,3vw,40px); top:50%; transform:translateY(-50%) rotate(90deg); transform-origin:center; font-size:.7rem; letter-spacing:.2em; text-transform:uppercase; color:rgba(233,240,234,.6); display:flex; align-items:center; gap:12px; z-index:1;}
-  .scroll-cue::after{content:""; width:48px; height:1px; background:rgba(233,240,234,.4);}
-
-  /* BANNER */
-  .banner{background:var(--leaf); color:var(--forest-deep);}
-  .banner .wrap{display:flex; align-items:center; justify-content:space-between; gap:20px; flex-wrap:wrap; padding-top:16px; padding-bottom:16px;}
-  .banner p{color:var(--forest-deep); font-size:.94rem; font-weight:600; display:flex; align-items:center; gap:12px;}
-  .banner p svg{width:20px; height:20px; flex:none;}
-  .banner a{font-weight:800; font-size:.92rem; text-decoration:none; display:inline-flex; align-items:center; gap:8px; background:var(--forest-deep); color:#fff; border-radius:999px; padding:9px 18px;}
-  .banner a svg{width:13px; height:13px;}
-
-  /* FEATURES */
-  .feature-card{padding:0; overflow:hidden;}
-  .feature-card .ph{aspect-ratio:16/10; overflow:hidden; position:relative;}
-  .feature-card .ph img{width:100%; height:100%; object-fit:cover; transition:transform .7s ease;}
-  .feature-card:hover .ph img{transform:scale(1.05);}
-  .feature-card .ph span{position:absolute; left:16px; bottom:16px; background:rgba(14,29,20,.75); color:#fff; font-size:.7rem; font-weight:700; letter-spacing:.08em; text-transform:uppercase; padding:6px 12px; border-radius:999px; backdrop-filter:blur(6px);}
-  .feature-card .body{padding:28px 30px 32px;}
-  .feature-card .icon{margin-bottom:16px; width:46px; height:46px;}
-  .feature-card .icon svg{width:23px; height:23px;}
-
-  /* ANNOUNCEMENTS */
-  .news{display:grid; grid-template-columns:repeat(3,1fr); gap:24px;}
-  .news .card{display:flex; flex-direction:column; gap:14px;}
-  .news .date{display:inline-flex; align-items:center; gap:8px; font-size:.74rem; font-weight:700; letter-spacing:.1em; text-transform:uppercase; color:var(--leaf-deep);}
-  .news .date::before{content:""; width:20px; height:2px; background:var(--leaf-deep);}
-  .news h3{font-size:1.2rem;}
-  .news .card p{flex:1;}
-
-  /* ABOUT split */
-  .split{display:grid; grid-template-columns:1.05fr 1fr; gap:0; border-radius:var(--radius); overflow:hidden; background:var(--sage);}
-  .split .copy{padding:clamp(40px,5vw,72px);}
-  .split .photo{position:relative; min-height:520px; clip-path:polygon(0 0, calc(100% - 56px) 0, 100% 56px, 100% 100%, 0 100%);}
-  .split .photo img{position:absolute; inset:0; width:100%; height:100%; object-fit:cover;}
-  .split .photo figcaption{position:absolute; left:22px; bottom:22px; background:rgba(14,29,20,.78); color:#fff; font-size:.78rem; font-weight:600; padding:8px 14px; border-radius:999px; backdrop-filter:blur(6px);}
-  .quote{display:flex; gap:18px; align-items:flex-start; background:#fff; border-radius:14px; padding:22px 24px; margin-top:32px; border:1px solid var(--line);}
-  .quote .q{font-size:2.6rem; line-height:.6; color:var(--leaf-deep); font-weight:800; margin-top:14px;}
-  .quote p{font-size:.98rem; color:var(--forest-deep); font-weight:600;}
-  .quote small{display:block; color:var(--muted); font-weight:500; margin-top:8px; font-size:.82rem;}
-  .about-cards{margin-top:24px;}
-
-  /* DUES band */
-  .dues-band{position:relative; overflow:hidden; isolation:isolate; color:#fff;}
-  .dues-band .bg{position:absolute; inset:0; z-index:-2;}
-  .dues-band .bg img{width:100%; height:100%; object-fit:cover; object-position:center 60%;}
-  .dues-band::after{content:""; position:absolute; inset:0; z-index:-1; background:linear-gradient(90deg, rgba(14,29,20,.94) 0%, rgba(14,29,20,.86) 50%, rgba(14,29,20,.6) 100%);}
-  .dues-band h2{color:#fff; font-size:clamp(2rem,4vw,3.4rem);}
-  .dues-band h2 em{color:var(--leaf);}
-  .dues-band .lede{margin-top:18px; max-width:60ch; color:rgba(233,240,234,.82); font-size:1.05rem;}
-  .dues-grid{display:grid; grid-template-columns:1.2fr 1fr; gap:48px; align-items:center;}
-  .dues-list{display:grid; grid-template-columns:1fr 1fr; gap:14px;}
-  .dues-list div{background:rgba(255,255,255,.07); border:1px solid rgba(255,255,255,.14); border-radius:14px; padding:20px 20px; font-weight:700; font-size:.94rem; color:#fff; display:flex; gap:12px; align-items:center; clip-path:polygon(0 0, calc(100% - 20px) 0, 100% 20px, 100% 100%, 0 100%);}
-  .dues-list div svg{width:22px; height:22px; flex:none; stroke:var(--leaf); fill:none; stroke-width:1.7; stroke-linecap:round; stroke-linejoin:round;}
-  .dues-list p{grid-column:1/-1; font-size:.76rem; letter-spacing:.14em; text-transform:uppercase; font-weight:700; color:rgba(233,240,234,.6); margin-bottom:4px;}
-
-  /* CALENDAR */
-  .cal-wrap{border:1px solid var(--line); border-radius:var(--radius); overflow:hidden; background:#fff; box-shadow:0 24px 50px -30px rgba(14,29,20,.3);}
-  .cal-header{display:flex; align-items:center; justify-content:space-between; background:var(--forest-deep); color:#fff; padding:18px 22px;}
-  .cal-header h3{color:#fff; font-size:1.1rem; font-weight:700; margin:0;}
-  .cal-nav{display:flex; gap:6px;}
-  .cal-nav button{background:rgba(255,255,255,.1); border:1px solid var(--line-dark); color:#fff; width:34px; height:34px; border-radius:50%; cursor:pointer; font-size:1.1rem; display:flex; align-items:center; justify-content:center; transition:background .15s ease;}
-  .cal-nav button:hover{background:var(--leaf); color:var(--forest-deep); border-color:var(--leaf);}
-  .cal-today-btn{background:var(--leaf); border:0; color:var(--forest-deep); font-size:.78rem; font-weight:700; padding:8px 14px; border-radius:999px; cursor:pointer; font-family:inherit;}
-  .cal-weekdays{display:grid; grid-template-columns:repeat(7,1fr); background:var(--sage); border-bottom:1px solid var(--line);}
-  .cal-weekdays span{text-align:center; padding:9px 0; font-size:.7rem; font-weight:700; letter-spacing:.08em; color:var(--leaf-deep); text-transform:uppercase;}
-  .cal-grid{display:grid; grid-template-columns:repeat(7,1fr);}
-  .cal-day{min-height:72px; padding:8px 10px; border-right:1px solid var(--line); border-bottom:1px solid var(--line); font-size:.82rem; color:var(--ink); position:relative;}
-  .cal-day:nth-child(7n){border-right:none;}
-  .cal-day.empty{background:var(--cream);}
-  .cal-day.today{background:rgba(224,169,58,.1);}
-  .cal-day .cal-daynum{font-weight:600;}
-  .cal-day.today .cal-daynum{display:inline-flex; align-items:center; justify-content:center; width:24px; height:24px; border-radius:50%; background:var(--amber); color:var(--forest-deep);}
-  .cal-event{margin-top:5px; font-size:.68rem; font-weight:600; background:var(--forest); color:#fff; padding:3px 7px; border-radius:6px; line-height:1.3; display:block; cursor:pointer;}
-  .cal-event.recurring{background:var(--river);}
-  .cal-event:hover{opacity:.85;}
-  .cal-legend{display:flex; flex-wrap:wrap; gap:16px; padding:14px 22px; background:var(--cream); border-top:1px solid var(--line); font-size:.78rem; color:var(--muted);}
-  .cal-legend span{display:flex; align-items:center; gap:6px;}
-  .cal-legend .dot{width:9px; height:9px; border-radius:50%; display:inline-block;}
-  .cal-modal-overlay{position:fixed; inset:0; z-index:100; background:rgba(14,29,20,.6); display:flex; align-items:center; justify-content:center; padding:20px; opacity:0; visibility:hidden; transition:opacity .2s ease, visibility .2s ease;}
-  .cal-modal-overlay.open{opacity:1; visibility:visible;}
-  .cal-modal{background:#fff; border-radius:16px; max-width:440px; width:100%; padding:30px 28px; position:relative; box-shadow:0 30px 60px -20px rgba(14,29,20,.5); transform:translateY(10px); transition:transform .2s ease;}
-  .cal-modal-overlay.open .cal-modal{transform:translateY(0);}
-  .cal-modal-close{position:absolute; top:14px; right:14px; background:none; border:none; cursor:pointer; width:32px; height:32px; border-radius:50%; font-size:1.2rem; color:var(--forest-deep); opacity:.6; display:flex; align-items:center; justify-content:center;}
-  .cal-modal-close:hover{opacity:1; background:var(--sage);}
-  .cal-modal-date{font-size:.72rem; color:var(--leaf-deep); font-weight:700; text-transform:uppercase; letter-spacing:.1em; margin-bottom:8px;}
-  .cal-modal h3{font-size:1.25rem; margin-bottom:12px; padding-right:20px;}
-  .cal-modal p.cal-modal-detail{font-size:.94rem; line-height:1.6; margin-bottom:18px;}
-  #calendar > p{max-width:70ch; margin-top:24px; font-size:.92rem;}
-  #calendar > p + p{margin-top:12px;}
-  .cite{display:inline-block; margin-top:10px; font-size:.8rem; font-weight:700; color:var(--leaf-deep); text-decoration:none;}
-  .cite:hover{text-decoration:underline;}
-
-  /* BOARD */
-  .team{display:grid; grid-template-columns:repeat(3,1fr); gap:24px;}
-  .member{display:flex; align-items:center; gap:20px; padding:24px;}
-  .member .mono{width:76px; height:76px; border-radius:18px; background:var(--forest-deep); color:var(--leaf); font-weight:800; font-size:1.5rem; letter-spacing:-.03em; display:flex; align-items:center; justify-content:center; flex:none; clip-path:polygon(0 0, calc(100% - 18px) 0, 100% 18px, 100% 100%, 0 100%);}
-  .member .role{font-size:.7rem; font-weight:700; letter-spacing:.12em; text-transform:uppercase; color:var(--leaf-deep); margin-bottom:4px;}
-  .member h4{font-size:1.15rem;}
-  .member p{font-size:.86rem; color:var(--muted); margin-top:4px;}
-  .note{max-width:70ch; margin-top:24px; font-size:.9rem; color:var(--muted);}
-
-  /* CALLOUT */
-  .callout{display:flex; align-items:center; justify-content:space-between; gap:32px; flex-wrap:wrap; background:var(--forest-deep); color:#fff; border-radius:var(--radius); padding:34px 40px; clip-path:polygon(0 0, calc(100% - var(--chamfer)) 0, 100% var(--chamfer), 100% 100%, 0 100%);}
-  .callout h3{color:#fff; font-size:1.4rem; margin-bottom:8px;}
-  .callout p{color:rgba(233,240,234,.78); max-width:60ch; font-size:.96rem;}
-  .callout p a{color:var(--leaf);}
-  .callout .btn-row{margin-top:0;}
-  .split-copy{display:grid; grid-template-columns:1fr 1fr; gap:48px; align-items:start; margin-bottom:40px;}
-  .split-copy .section-head{margin-bottom:0;}
-  .split-copy p.body{font-size:1.02rem; padding-top:8px;}
-
-  /* FORM */
-  .form-card{background:#fff; border:1px solid var(--line); border-radius:var(--radius); padding:34px 36px; margin-top:24px;}
-  .form-card h3{margin-bottom:6px;}
-  .form-card > p{font-size:.92rem; color:var(--muted); margin-bottom:22px;}
-  form.f{display:flex; flex-direction:column; gap:14px;}
-  form.f .r2{display:grid; grid-template-columns:1fr 1fr; gap:14px;}
-  form.f .r3{display:grid; grid-template-columns:1fr 1fr 1fr; gap:14px;}
-  form.f input, form.f select, form.f textarea{width:100%; padding:13px 15px; border:1px solid var(--line); border-radius:11px; font-family:inherit; font-size:.93rem; background:var(--cream); color:var(--ink);}
-  form.f input:focus, form.f select:focus, form.f textarea:focus{outline:none; border-color:var(--leaf-deep); background:#fff;}
-  form.f textarea{resize:vertical;}
-  form.f label{display:block; font-size:.84rem; color:var(--muted); margin-bottom:6px; font-weight:600;}
-  form.f input[type=file]{padding:10px; background:none; border-style:dashed;}
-  form.f .btn{align-self:flex-start; margin-top:6px;}
-
-  /* FAQ */
-  #faq > div:not(.section-head){columns:2; column-gap:28px;}
-  details{background:#fff; border:1px solid var(--line); border-radius:14px; padding:0 22px; margin-bottom:14px; break-inside:avoid; transition:border-color .2s;}
-  details[open]{border-color:var(--leaf-deep);}
-  summary{cursor:pointer; list-style:none; padding:18px 0; font-weight:700; font-size:.98rem; color:var(--forest-deep); display:flex; justify-content:space-between; align-items:center; gap:16px;}
-  summary::-webkit-details-marker{display:none;}
-  summary::after{content:""; flex:none; width:28px; height:28px; border-radius:50%; background:var(--sage) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%230e1d14' stroke-width='2.4' stroke-linecap='round'%3E%3Cpath d='M12 5v14M5 12h14'/%3E%3C/svg%3E") center/13px no-repeat; transition:transform .25s, background-color .2s;}
-  details[open] summary::after{transform:rotate(45deg); background-color:var(--leaf);}
-  details p{font-size:.93rem; padding-bottom:18px;}
-  details p + .cite{margin-top:-8px; margin-bottom:18px;}
-  details .cite{margin-bottom:18px;}
-
-  /* GALLERY */
-  .gallery{display:grid; grid-template-columns:repeat(4,1fr); grid-auto-rows:220px; gap:16px;}
-  .gallery figure{position:relative; overflow:hidden; border-radius:14px; margin:0; background:var(--sage);}
-  .gallery figure:nth-child(1){grid-column:span 2; grid-row:span 2;}
-    .gallery figure:nth-child(6){grid-column:span 2;}
-  .gallery img{width:100%; height:100%; object-fit:cover; transition:transform .8s ease;}
-  .gallery figure:hover img{transform:scale(1.05);}
-  .gallery figcaption{position:absolute; left:14px; bottom:14px; background:rgba(14,29,20,.78); color:#fff; font-size:.76rem; font-weight:600; padding:7px 13px; border-radius:999px; backdrop-filter:blur(6px);}
-
-  /* NEWSLETTER */
-  .newsletter{background:var(--forest); color:#fff;}
-  .newsletter .wrap{display:grid; grid-template-columns:1.1fr 1fr; gap:40px; align-items:center; padding-top:56px; padding-bottom:56px;}
-  .newsletter h3{color:#fff; font-size:1.7rem;}
-  .newsletter p{color:rgba(233,240,234,.78); margin-top:8px; max-width:50ch;}
-  .newsletter form{display:flex; gap:10px; background:rgba(255,255,255,.08); border:1px solid var(--line-dark); border-radius:999px; padding:6px 6px 6px 22px; align-items:center;}
-  .newsletter input{flex:1; background:none; border:0; color:#fff; font-family:inherit; font-size:.95rem; min-width:0;}
-  .newsletter input::placeholder{color:rgba(233,240,234,.55);}
-  .newsletter input:focus{outline:none;}
-  .newsletter .btn{padding:6px 6px 6px 20px; font-size:.88rem;}
-
-  /* FOOTER */
-  footer{background:var(--forest-deep); color:#e9f0ea; padding:clamp(64px,7vw,96px) 0 32px;}
-  .footer-grid{display:grid; grid-template-columns:1.5fr 1fr 1fr 1fr; gap:48px;}
-  footer h5{font-size:.72rem; font-weight:700; letter-spacing:.14em; text-transform:uppercase; color:var(--leaf); margin-bottom:18px;}
-  footer .col a{display:block; text-decoration:none; color:rgba(233,240,234,.78); font-size:.92rem; padding:5px 0; transition:color .15s;}
-  footer .col a:hover{color:#fff;}
-  footer p{color:rgba(233,240,234,.78);}
-  .contact-form{display:flex; flex-direction:column; gap:10px; margin-top:16px; max-width:460px;}
-  .contact-form input, .contact-form textarea{width:100%; padding:13px 15px; border:1px solid var(--line-dark); border-radius:11px; background:rgba(255,255,255,.06); color:#fff; font-family:inherit; font-size:.93rem;}
-  .contact-form input::placeholder, .contact-form textarea::placeholder{color:rgba(233,240,234,.5);}
-  .contact-form input:focus, .contact-form textarea:focus{outline:none; border-color:var(--leaf);}
-  .contact-form button{align-self:flex-start; margin-top:6px;}
-  .fine{font-size:.76rem; color:rgba(233,240,234,.5) !important; max-width:80ch; margin-top:44px; line-height:1.6;}
-  .fine a{color:rgba(233,240,234,.7);}
-  .foot-bottom{display:flex; align-items:center; justify-content:space-between; gap:16px; flex-wrap:wrap; border-top:1px solid var(--line-dark); margin-top:24px; padding-top:22px; font-size:.8rem; color:rgba(233,240,234,.55);}
-  .jak-credit{display:inline-flex; align-items:center; gap:10px; text-decoration:none; color:rgba(233,240,234,.55);}
-  .jak-credit img{height:38px; width:auto;}
-
-  /* floating action */
-  .fab{position:fixed; right:22px; bottom:22px; z-index:55; opacity:0; transform:translateY(12px); pointer-events:none; transition:opacity .3s, transform .3s;}
-  .fab.show{opacity:1; transform:none; pointer-events:auto;}
-  .fab{ display:flex; flex-direction:column; gap:4px; background:var(--forest-deep); border:1px solid var(--line-dark); border-radius:999px; padding:6px; box-shadow:0 18px 40px -16px rgba(14,29,20,.6);}
-  .fab a{width:44px; height:44px; border-radius:50%; display:flex; align-items:center; justify-content:center; color:#fff; text-decoration:none; transition:background .15s, color .15s;}
-  .fab a:hover{background:var(--leaf); color:var(--forest-deep);}
-  .fab a svg{width:18px; height:18px;}
-
-  .reveal{opacity:0; transform:translateY(22px); transition:opacity .7s ease, transform .7s ease;}
-  .reveal.in{opacity:1; transform:none;}
-  @media (prefers-reduced-motion:reduce){.reveal{opacity:1; transform:none; transition:none;} .hero-bg img{animation:none;}}
-
-  @media (max-width:1100px){
-    .navlinks{display:none;}
-    .menu-toggle{display:flex;}
-    .navlinks.open{display:flex; position:absolute; top:100%; left:0; right:0; height:calc(100vh - 76px); height:calc(100dvh - 76px); background:var(--forest-deep); border-top:1px solid var(--line-dark); flex-direction:column; align-items:stretch; gap:0; padding:12px clamp(20px,4vw,48px) 40px; overflow-y:auto; z-index:56;}
-    .navlinks.open a.hot{display:flex;}
-    .navlinks.open > a, .navlinks.open .dd > button{padding:16px 4px; border-bottom:1px solid var(--line-dark); border-radius:0; font-size:1.05rem; width:100%; justify-content:space-between;}
-    .navlinks.open .dd-menu{position:static; opacity:1; visibility:visible; transform:none; background:none; border:0; box-shadow:none; padding:6px 0 10px 12px;}
-    .navlinks.open .dd-menu a{color:rgba(233,240,234,.85);}
-    .navlinks.open .dd-menu a:hover{background:rgba(255,255,255,.06);}
-    .navlinks.open .dd-menu a span{color:rgba(233,240,234,.45);}
-    .nav-right .btn{display:none;}
-  }
-  @media (max-width:960px){
-    .hero .wrap{grid-template-columns:1fr; padding-top:96px;}
-    .stats{justify-self:start; width:100%; flex-direction:row;}
-    .stat{flex:1;}
-    .scroll-cue{display:none;}
-    .grid3, .news, .team{grid-template-columns:1fr 1fr;}
-    .split{grid-template-columns:1fr;}
-    .grid2{grid-template-columns:1fr;}
-    .split .photo{min-height:360px; order:-1; clip-path:none;}
-    .dues-grid{grid-template-columns:1fr;}
-    .split-copy{grid-template-columns:1fr; gap:20px;}
-    #faq > div:not(.section-head){columns:1;}
-    .gallery{grid-template-columns:1fr 1fr; grid-auto-rows:200px;}
-    .gallery figure:nth-child(n){grid-column:auto; grid-row:auto;}
-    .gallery figure:nth-child(1){grid-column:span 2;}
-    .newsletter .wrap{grid-template-columns:1fr;}
-    .footer-grid{grid-template-columns:1fr 1fr;}
-  }
-  @media (max-width:640px){
-    .grid3, .news, .team, .footer-grid{grid-template-columns:1fr;}
-    .stats{flex-direction:column;}
-    .stat strong{font-size:2rem;}
-    form.f .r2, form.f .r3{grid-template-columns:1fr;}
-    .callout{padding:28px 24px;}
-    .dues-list{grid-template-columns:1fr;}
-    .cal-day{min-height:54px; padding:5px 6px; font-size:.74rem;}
-    .cal-event{font-size:.6rem; padding:2px 4px;}
-    .fab{right:14px; bottom:14px;}
-    .brand-name small{display:none;}
-  }
-</style>
+<link rel="stylesheet" href="css/site.css">
 </head>
 <body id="top">
-
+<div class="preloader" aria-hidden="true">
+  <div class="mark"><svg viewBox="0 0 24 24" fill="none">
+  <path d="M2 8c1.5 1.6 3 1.6 4.5 0s3-1.6 4.5 0 3 1.6 4.5 0 3-1.6 4.5 0" stroke="#8fd46e" stroke-width="1.7" stroke-linecap="round"/>
+  <path d="M2 13c1.5 1.6 3 1.6 4.5 0s3-1.6 4.5 0 3 1.6 4.5 0 3-1.6 4.5 0" stroke="#f2f6f0" stroke-width="1.7" stroke-linecap="round" opacity=".75"/>
+  <path d="M2 18c1.5 1.6 3 1.6 4.5 0s3-1.6 4.5 0 3 1.6 4.5 0 3-1.6 4.5 0" stroke="#f2f6f0" stroke-width="1.7" stroke-linecap="round" opacity=".4"/>
+</svg></div>
+  <div class="bar"><i></i></div>
+  <small>Riverwood Trails</small>
+</div>
 <header>
   <div class="wrap">
     <nav>
-      <a href="#top" class="brand">
-        <span class="brand-mark" aria-hidden="true">
-          <svg viewBox="0 0 24 24" fill="none">
-            <path d="M2 8c1.5 1.6 3 1.6 4.5 0s3-1.6 4.5 0 3 1.6 4.5 0 3-1.6 4.5 0" stroke="#8fd46e" stroke-width="1.7" stroke-linecap="round"/>
-            <path d="M2 13c1.5 1.6 3 1.6 4.5 0s3-1.6 4.5 0 3 1.6 4.5 0 3-1.6 4.5 0" stroke="#f2f6f0" stroke-width="1.7" stroke-linecap="round" opacity=".75"/>
-            <path d="M2 18c1.5 1.6 3 1.6 4.5 0s3-1.6 4.5 0 3 1.6 4.5 0 3-1.6 4.5 0" stroke="#f2f6f0" stroke-width="1.7" stroke-linecap="round" opacity=".4"/>
-          </svg>
-        </span>
+      <a href="index.html" class="brand">
+        <span class="brand-mark" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none">
+  <path d="M2 8c1.5 1.6 3 1.6 4.5 0s3-1.6 4.5 0 3 1.6 4.5 0 3-1.6 4.5 0" stroke="#8fd46e" stroke-width="1.7" stroke-linecap="round"/>
+  <path d="M2 13c1.5 1.6 3 1.6 4.5 0s3-1.6 4.5 0 3 1.6 4.5 0 3-1.6 4.5 0" stroke="#f2f6f0" stroke-width="1.7" stroke-linecap="round" opacity=".75"/>
+  <path d="M2 18c1.5 1.6 3 1.6 4.5 0s3-1.6 4.5 0 3 1.6 4.5 0 3-1.6 4.5 0" stroke="#f2f6f0" stroke-width="1.7" stroke-linecap="round" opacity=".4"/>
+</svg></span>
         <span class="brand-name">Riverwood Trails<small>Homeowners Association · Kings Mills, OH</small></span>
       </a>
-
       <div class="navlinks" id="navLinks">
-        <a href="#announcements">HOA News</a>
-        <a href="#dues">Dues</a>
-        <a href="#calendar">Calendar</a>
-        <a href="#board">Board</a>
+        <a href="index.html" class="active">Home</a>
+        <a href="index.html#announcements">News</a>
+        <a href="index.html#dues">Dues</a>
+        <a href="board.html">Board &amp; Committees</a>
+        <a href="calendar.html">Calendar</a>
+        <a href="faq.html">FAQ</a>
         <div class="dd">
           <button type="button" aria-haspopup="true">Documents <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"/></svg></button>
           <div class="dd-menu">
@@ -434,11 +53,9 @@
             <a href="documents/new-resident-welcome.pdf" target="_blank" rel="noopener">New Resident Guide <span>PDF</span></a>
           </div>
         </div>
-        <a href="#faq">FAQ</a>
-        <a href="#contact">Contact</a>
+        <a href="index.html#contact">Contact</a>
         <a href="mailto:home@riverwoodtrails.com?subject=Concern%20or%20Violation%20Report" class="hot">Report a Concern</a>
       </div>
-
       <div class="nav-right">
         <div class="search-wrap">
           <button class="search-toggle" id="searchToggle" aria-label="Search the site">
@@ -449,43 +66,88 @@
             <div class="search-results" id="searchResults"></div>
           </div>
         </div>
-        <a href="mailto:home@riverwoodtrails.com?subject=Concern%20or%20Violation%20Report" class="btn">Report a Concern <span class="cap"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17L17 7M9 7h8v8"/></svg></span></a>
+        <a href="mailto:home@riverwoodtrails.com?subject=Concern%20or%20Violation%20Report" class="btn " >Report a Concern <span class="cap"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17L17 7M9 7h8v8"/></svg></span></a>
         <button class="menu-toggle" id="menuToggle" aria-label="Menu" aria-expanded="false"><span></span><span></span><span></span></button>
       </div>
     </nav>
   </div>
 </header>
 
-<!-- HERO -->
 <section class="hero">
-  <div class="hero-bg"><img src="images/hero.jpg" alt="Kayakers paddling the Little Miami River near Loveland, Ohio" fetchpriority="high"></div>
-  <div class="scroll-cue" aria-hidden="true">Scroll down</div>
+  <div class="hero-bg"><img src="images/hero.jpg" alt="The Riverwood Trails stone entrance sign at sunrise" fetchpriority="high"></div>
   <div class="wrap">
-    <div>
-      <div class="hero-mark" aria-hidden="true">
-        <svg viewBox="0 0 24 24" fill="none">
-          <path d="M2 8c1.5 1.6 3 1.6 4.5 0s3-1.6 4.5 0 3 1.6 4.5 0 3-1.6 4.5 0" stroke="#8fd46e" stroke-width="1.7" stroke-linecap="round"/>
-          <path d="M2 13c1.5 1.6 3 1.6 4.5 0s3-1.6 4.5 0 3 1.6 4.5 0 3-1.6 4.5 0" stroke="#f2f6f0" stroke-width="1.7" stroke-linecap="round" opacity=".75"/>
-          <path d="M2 18c1.5 1.6 3 1.6 4.5 0s3-1.6 4.5 0 3 1.6 4.5 0 3-1.6 4.5 0" stroke="#f2f6f0" stroke-width="1.7" stroke-linecap="round" opacity=".4"/>
-        </svg>
-      </div>
-      <span class="tag">Welcome to Riverwood Trails</span>
-      <h1>A neighborhood tucked into the woods, <em>along the Little Miami.</em></h1>
-      <p class="lede">Seventy-six homes on two quiet streets in Kings Mills, Ohio — within walking distance of Kings schools and wooded hiking trails, and minutes from Kings Island.</p>
-      <div class="hero-rule"></div>
-      <div class="btn-row">
-        <a href="#dues" class="btn">Pay HOA Dues <span class="cap"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17L17 7M9 7h8v8"/></svg></span></a>
-        <a href="#faq" class="btn-text">Community Guidelines <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17L17 7M9 7h8v8"/></svg></a>
-      </div>
-    </div>
     <div class="stats">
-      <div class="stat"><div><b>Homes in the<br>neighborhood</b><small>Two quiet streets</small></div><strong>76</strong></div>
-      <div class="stat"><div><b>Annual HOA dues</b><small>Invoiced each April</small></div><strong><span>$</span>350</strong></div>
+      <div class="stat"><div><b>Homes in the<br>neighborhood</b><small>Two quiet streets</small></div><strong data-count="76">0</strong></div>
+      <div class="stat"><div><b>Annual HOA dues</b><small>Invoiced each April</small></div><strong><span>$</span><i data-count="350" style="font-style:normal">0</i></strong></div>
+    </div>
+    <div class="hero-copy">
+      <div class="hero-mark up" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none">
+  <path d="M2 8c1.5 1.6 3 1.6 4.5 0s3-1.6 4.5 0 3 1.6 4.5 0 3-1.6 4.5 0" stroke="#8fd46e" stroke-width="1.7" stroke-linecap="round"/>
+  <path d="M2 13c1.5 1.6 3 1.6 4.5 0s3-1.6 4.5 0 3 1.6 4.5 0 3-1.6 4.5 0" stroke="#f2f6f0" stroke-width="1.7" stroke-linecap="round" opacity=".75"/>
+  <path d="M2 18c1.5 1.6 3 1.6 4.5 0s3-1.6 4.5 0 3 1.6 4.5 0 3-1.6 4.5 0" stroke="#f2f6f0" stroke-width="1.7" stroke-linecap="round" opacity=".4"/>
+</svg></div>
+      <span class="tag up" style="animation-delay:.15s">Welcome to Riverwood Trails</span>
+      <h1><span class="w"><span style="animation-delay:.25s">A neighborhood</span></span> <span class="w"><span style="animation-delay:.35s">tucked into the</span></span> <span class="w"><span style="animation-delay:.45s">woods, <em>along the</em></span></span> <span class="w"><span style="animation-delay:.55s"><em>Little Miami.</em></span></span></h1>
+      <p class="lede up" style="animation-delay:.8s">Seventy-six homes on two quiet streets in Kings Mills, Ohio — within walking distance of Kings schools and wooded hiking trails, and minutes from Kings Island.</p>
+      <div class="hero-rule"></div>
+      <div class="btn-row up" style="animation-delay:1s">
+        <a href="#dues" class="btn " >Pay HOA Dues <span class="cap"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17L17 7M9 7h8v8"/></svg></span></a>
+        <a href="faq.html" class="btn-text" >Community Guidelines <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17L17 7M9 7h8v8"/></svg></a>
+      </div>
     </div>
   </div>
 </section>
 
-<!-- NEW RESIDENT BANNER -->
+<div class="ticker" aria-hidden="true"><div class="ticker-track"><span><svg viewBox="0 0 24 24" fill="none">
+  <path d="M2 8c1.5 1.6 3 1.6 4.5 0s3-1.6 4.5 0 3 1.6 4.5 0 3-1.6 4.5 0" stroke="#8fd46e" stroke-width="1.7" stroke-linecap="round"/>
+  <path d="M2 13c1.5 1.6 3 1.6 4.5 0s3-1.6 4.5 0 3 1.6 4.5 0 3-1.6 4.5 0" stroke="#f2f6f0" stroke-width="1.7" stroke-linecap="round" opacity=".75"/>
+  <path d="M2 18c1.5 1.6 3 1.6 4.5 0s3-1.6 4.5 0 3 1.6 4.5 0 3-1.6 4.5 0" stroke="#f2f6f0" stroke-width="1.7" stroke-linecap="round" opacity=".4"/>
+</svg>Kings Mills, Ohio</span><span><svg viewBox="0 0 24 24" fill="none">
+  <path d="M2 8c1.5 1.6 3 1.6 4.5 0s3-1.6 4.5 0 3 1.6 4.5 0 3-1.6 4.5 0" stroke="#8fd46e" stroke-width="1.7" stroke-linecap="round"/>
+  <path d="M2 13c1.5 1.6 3 1.6 4.5 0s3-1.6 4.5 0 3 1.6 4.5 0 3-1.6 4.5 0" stroke="#f2f6f0" stroke-width="1.7" stroke-linecap="round" opacity=".75"/>
+  <path d="M2 18c1.5 1.6 3 1.6 4.5 0s3-1.6 4.5 0 3 1.6 4.5 0 3-1.6 4.5 0" stroke="#f2f6f0" stroke-width="1.7" stroke-linecap="round" opacity=".4"/>
+</svg>76 Homes on Two Quiet Streets</span><span><svg viewBox="0 0 24 24" fill="none">
+  <path d="M2 8c1.5 1.6 3 1.6 4.5 0s3-1.6 4.5 0 3 1.6 4.5 0 3-1.6 4.5 0" stroke="#8fd46e" stroke-width="1.7" stroke-linecap="round"/>
+  <path d="M2 13c1.5 1.6 3 1.6 4.5 0s3-1.6 4.5 0 3 1.6 4.5 0 3-1.6 4.5 0" stroke="#f2f6f0" stroke-width="1.7" stroke-linecap="round" opacity=".75"/>
+  <path d="M2 18c1.5 1.6 3 1.6 4.5 0s3-1.6 4.5 0 3 1.6 4.5 0 3-1.6 4.5 0" stroke="#f2f6f0" stroke-width="1.7" stroke-linecap="round" opacity=".4"/>
+</svg>Along the Little Miami River</span><span><svg viewBox="0 0 24 24" fill="none">
+  <path d="M2 8c1.5 1.6 3 1.6 4.5 0s3-1.6 4.5 0 3 1.6 4.5 0 3-1.6 4.5 0" stroke="#8fd46e" stroke-width="1.7" stroke-linecap="round"/>
+  <path d="M2 13c1.5 1.6 3 1.6 4.5 0s3-1.6 4.5 0 3 1.6 4.5 0 3-1.6 4.5 0" stroke="#f2f6f0" stroke-width="1.7" stroke-linecap="round" opacity=".75"/>
+  <path d="M2 18c1.5 1.6 3 1.6 4.5 0s3-1.6 4.5 0 3 1.6 4.5 0 3-1.6 4.5 0" stroke="#f2f6f0" stroke-width="1.7" stroke-linecap="round" opacity=".4"/>
+</svg>Kings Local Schools</span><span><svg viewBox="0 0 24 24" fill="none">
+  <path d="M2 8c1.5 1.6 3 1.6 4.5 0s3-1.6 4.5 0 3 1.6 4.5 0 3-1.6 4.5 0" stroke="#8fd46e" stroke-width="1.7" stroke-linecap="round"/>
+  <path d="M2 13c1.5 1.6 3 1.6 4.5 0s3-1.6 4.5 0 3 1.6 4.5 0 3-1.6 4.5 0" stroke="#f2f6f0" stroke-width="1.7" stroke-linecap="round" opacity=".75"/>
+  <path d="M2 18c1.5 1.6 3 1.6 4.5 0s3-1.6 4.5 0 3 1.6 4.5 0 3-1.6 4.5 0" stroke="#f2f6f0" stroke-width="1.7" stroke-linecap="round" opacity=".4"/>
+</svg>Minutes from Kings Island</span><span><svg viewBox="0 0 24 24" fill="none">
+  <path d="M2 8c1.5 1.6 3 1.6 4.5 0s3-1.6 4.5 0 3 1.6 4.5 0 3-1.6 4.5 0" stroke="#8fd46e" stroke-width="1.7" stroke-linecap="round"/>
+  <path d="M2 13c1.5 1.6 3 1.6 4.5 0s3-1.6 4.5 0 3 1.6 4.5 0 3-1.6 4.5 0" stroke="#f2f6f0" stroke-width="1.7" stroke-linecap="round" opacity=".75"/>
+  <path d="M2 18c1.5 1.6 3 1.6 4.5 0s3-1.6 4.5 0 3 1.6 4.5 0 3-1.6 4.5 0" stroke="#f2f6f0" stroke-width="1.7" stroke-linecap="round" opacity=".4"/>
+</svg>Wooded Trails Out Back</span><span><svg viewBox="0 0 24 24" fill="none">
+  <path d="M2 8c1.5 1.6 3 1.6 4.5 0s3-1.6 4.5 0 3 1.6 4.5 0 3-1.6 4.5 0" stroke="#8fd46e" stroke-width="1.7" stroke-linecap="round"/>
+  <path d="M2 13c1.5 1.6 3 1.6 4.5 0s3-1.6 4.5 0 3 1.6 4.5 0 3-1.6 4.5 0" stroke="#f2f6f0" stroke-width="1.7" stroke-linecap="round" opacity=".75"/>
+  <path d="M2 18c1.5 1.6 3 1.6 4.5 0s3-1.6 4.5 0 3 1.6 4.5 0 3-1.6 4.5 0" stroke="#f2f6f0" stroke-width="1.7" stroke-linecap="round" opacity=".4"/>
+</svg>Kings Mills, Ohio</span><span><svg viewBox="0 0 24 24" fill="none">
+  <path d="M2 8c1.5 1.6 3 1.6 4.5 0s3-1.6 4.5 0 3 1.6 4.5 0 3-1.6 4.5 0" stroke="#8fd46e" stroke-width="1.7" stroke-linecap="round"/>
+  <path d="M2 13c1.5 1.6 3 1.6 4.5 0s3-1.6 4.5 0 3 1.6 4.5 0 3-1.6 4.5 0" stroke="#f2f6f0" stroke-width="1.7" stroke-linecap="round" opacity=".75"/>
+  <path d="M2 18c1.5 1.6 3 1.6 4.5 0s3-1.6 4.5 0 3 1.6 4.5 0 3-1.6 4.5 0" stroke="#f2f6f0" stroke-width="1.7" stroke-linecap="round" opacity=".4"/>
+</svg>76 Homes on Two Quiet Streets</span><span><svg viewBox="0 0 24 24" fill="none">
+  <path d="M2 8c1.5 1.6 3 1.6 4.5 0s3-1.6 4.5 0 3 1.6 4.5 0 3-1.6 4.5 0" stroke="#8fd46e" stroke-width="1.7" stroke-linecap="round"/>
+  <path d="M2 13c1.5 1.6 3 1.6 4.5 0s3-1.6 4.5 0 3 1.6 4.5 0 3-1.6 4.5 0" stroke="#f2f6f0" stroke-width="1.7" stroke-linecap="round" opacity=".75"/>
+  <path d="M2 18c1.5 1.6 3 1.6 4.5 0s3-1.6 4.5 0 3 1.6 4.5 0 3-1.6 4.5 0" stroke="#f2f6f0" stroke-width="1.7" stroke-linecap="round" opacity=".4"/>
+</svg>Along the Little Miami River</span><span><svg viewBox="0 0 24 24" fill="none">
+  <path d="M2 8c1.5 1.6 3 1.6 4.5 0s3-1.6 4.5 0 3 1.6 4.5 0 3-1.6 4.5 0" stroke="#8fd46e" stroke-width="1.7" stroke-linecap="round"/>
+  <path d="M2 13c1.5 1.6 3 1.6 4.5 0s3-1.6 4.5 0 3 1.6 4.5 0 3-1.6 4.5 0" stroke="#f2f6f0" stroke-width="1.7" stroke-linecap="round" opacity=".75"/>
+  <path d="M2 18c1.5 1.6 3 1.6 4.5 0s3-1.6 4.5 0 3 1.6 4.5 0 3-1.6 4.5 0" stroke="#f2f6f0" stroke-width="1.7" stroke-linecap="round" opacity=".4"/>
+</svg>Kings Local Schools</span><span><svg viewBox="0 0 24 24" fill="none">
+  <path d="M2 8c1.5 1.6 3 1.6 4.5 0s3-1.6 4.5 0 3 1.6 4.5 0 3-1.6 4.5 0" stroke="#8fd46e" stroke-width="1.7" stroke-linecap="round"/>
+  <path d="M2 13c1.5 1.6 3 1.6 4.5 0s3-1.6 4.5 0 3 1.6 4.5 0 3-1.6 4.5 0" stroke="#f2f6f0" stroke-width="1.7" stroke-linecap="round" opacity=".75"/>
+  <path d="M2 18c1.5 1.6 3 1.6 4.5 0s3-1.6 4.5 0 3 1.6 4.5 0 3-1.6 4.5 0" stroke="#f2f6f0" stroke-width="1.7" stroke-linecap="round" opacity=".4"/>
+</svg>Minutes from Kings Island</span><span><svg viewBox="0 0 24 24" fill="none">
+  <path d="M2 8c1.5 1.6 3 1.6 4.5 0s3-1.6 4.5 0 3 1.6 4.5 0 3-1.6 4.5 0" stroke="#8fd46e" stroke-width="1.7" stroke-linecap="round"/>
+  <path d="M2 13c1.5 1.6 3 1.6 4.5 0s3-1.6 4.5 0 3 1.6 4.5 0 3-1.6 4.5 0" stroke="#f2f6f0" stroke-width="1.7" stroke-linecap="round" opacity=".75"/>
+  <path d="M2 18c1.5 1.6 3 1.6 4.5 0s3-1.6 4.5 0 3 1.6 4.5 0 3-1.6 4.5 0" stroke="#f2f6f0" stroke-width="1.7" stroke-linecap="round" opacity=".4"/>
+</svg>Wooded Trails Out Back</span></div></div>
+
 <div class="banner">
   <div class="wrap">
     <p><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 11l9-7 9 7v9a1 1 0 0 1-1 1h-5v-6h-6v6H4a1 1 0 0 1-1-1z"/></svg>New to Riverwood Trails? Start with our quick guide — trash days, dues, and the rules that matter most.</p>
@@ -493,8 +155,7 @@
   </div>
 </div>
 
-<!-- WHY FAMILIES CHOOSE -->
-<div class="band sage" id="neighborhood">
+<div class="band sage topo" id="neighborhood">
   <section class="wrap">
     <div class="head-row reveal">
       <div class="section-head">
@@ -504,8 +165,8 @@
       </div>
       <p class="aside">Secluded in the woods, close to it all — Kings Mills is served by the highly ranked Kings Local School District, with shopping and dining nearby.</p>
     </div>
-    <div class="grid3">
-      <article class="card feature-card reveal">
+    <div class="grid3 stagger">
+      <article class="card feature-card">
         <div class="ph"><img src="images/kings-hs.jpg" alt="Kings High School in Kings Mills, Ohio" loading="lazy"><span>Kings Mills</span></div>
         <div class="body">
           <div class="icon"><svg viewBox="0 0 24 24"><path d="M3 10l9-5 9 5-9 5-9-5z"/><path d="M7 12v5c0 1 2.5 2.5 5 2.5s5-1.5 5-2.5v-5"/><path d="M21 10v6"/></svg></div>
@@ -513,7 +174,7 @@
           <p>Kings Local is consistently ranked among Ohio's top districts, and Riverwood Trails is within walking distance of both Kings High School and Kings Elementary — a rare find for a neighborhood this secluded.</p>
         </div>
       </article>
-      <article class="card feature-card reveal">
+      <article class="card feature-card">
         <div class="ph"><img src="images/trail.jpg" alt="Little Miami Scenic Trail through the trees near Loveland, Ohio" loading="lazy"><span>Little Miami Scenic Trail</span></div>
         <div class="body">
           <div class="icon"><svg viewBox="0 0 24 24"><path d="M12 3l4 6h-2.5l3.5 5h-3l3 5H7l3-5H7l3.5-5H8z"/><path d="M12 19v2"/></svg></div>
@@ -521,7 +182,7 @@
           <p>The neighborhood backs into wooded conservation land along the Little Miami — a federally designated Wild and Scenic River. Walking trails wind through the trees just beyond your yard, tucked away and quiet, with an archery park nearby.</p>
         </div>
       </article>
-      <article class="card feature-card reveal">
+      <article class="card feature-card">
         <div class="ph"><img src="images/ki-orion.jpg" alt="The Orion roller coaster at Kings Island" loading="lazy"><span>Kings Island</span></div>
         <div class="body">
           <div class="icon"><svg viewBox="0 0 24 24"><path d="M12 21s-7-6.2-7-11.5a7 7 0 0 1 14 0C19 14.8 12 21 12 21z"/><circle cx="12" cy="9.5" r="2.5"/></svg></div>
@@ -533,7 +194,6 @@
   </section>
 </div>
 
-<!-- ANNOUNCEMENTS -->
 <div class="band" id="announcements">
   <section class="wrap">
     <div class="head-row reveal">
@@ -541,33 +201,33 @@
         <span class="tag">HOA News</span>
         <h2>Announcements from <em>the board</em></h2>
       </div>
-      <p class="aside">Assessments, projects, and neighborhood updates. Sign up below to get these by email.</p>
+      <a href="calendar.html" class="btn-text" >See the calendar <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17L17 7M9 7h8v8"/></svg></a>
     </div>
-    <div class="news">
-      <article class="card reveal">
-        <span class="date">August 29, 2026</span>
+    <div class="news stagger">
+      <article class="card dark">
+        <span class="date">Annual HOA Meeting</span>
+        <div class="bigdate"><b>29</b><span>Aug 2026</span></div>
         <h3>New board members elected</h3>
-        <p>At the Annual HOA Meeting on August 29, 2026, Doug Godby (President) and John Cook (Treasurer) completed their terms. Tim Macy and Daniel Kostreva were elected to the board, and Amanda Wells continues her term. Officer positions (President, Treasurer, Secretary) will be assigned at the board's next meeting. Thank you to Doug and John for their service, and welcome to Tim and Daniel.</p>
-        <a href="#board" class="btn-text">Meet the board <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17L17 7M9 7h8v8"/></svg></a>
+        <p>Doug Godby (President) and John Cook (Treasurer) completed their terms. Tim Macy and Daniel Kostreva were elected to the board, and Amanda Wells continues her term. Officer positions (President, Treasurer, Secretary) will be assigned at the board's next meeting. Thank you to Doug and John for their service, and welcome to Tim and Daniel.</p>
+        <a href="board.html" class="btn-text" >Meet the board <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17L17 7M9 7h8v8"/></svg></a>
       </article>
-      <article class="card reveal">
+      <article class="card">
         <span class="date">Every April</span>
         <h3>Annual dues invoices go out</h3>
         <p>Invoices for this year's $350 HOA dues are mailed no later than April and are due upon receipt, covering the calendar year January–December.</p>
-        <a href="#dues" class="btn-text">Dues details <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17L17 7M9 7h8v8"/></svg></a>
+        <a href="#dues" class="btn-text" >Dues details <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17L17 7M9 7h8v8"/></svg></a>
       </article>
-      <article class="card reveal">
+      <article class="card">
         <span class="date">Reminder</span>
         <h3>Exterior and yard changes need approval first</h3>
         <p>Fences, additions, decks, pools, paint, siding, and landscaping all require a completed Design Review Application submitted to the board before work begins. See the FAQ for the full list and the application form.</p>
-        <a href="#design-review-board" class="btn-text">Design review <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17L17 7M9 7h8v8"/></svg></a>
+        <a href="board.html#design-review-board" class="btn-text" >Design review <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17L17 7M9 7h8v8"/></svg></a>
       </article>
     </div>
   </section>
 </div>
 
-<!-- ABOUT -->
-<div class="band sage" id="about" style="padding-top:0;">
+<div class="band sage topo" id="about" style="padding-top:0;">
   <section class="wrap">
     <div class="split reveal">
       <div class="copy">
@@ -587,14 +247,14 @@
         <figcaption>Peters Cartridge Factory · Kings Mills</figcaption>
       </figure>
     </div>
-    <div class="grid2 about-cards">
-      <article class="card reveal">
+    <div class="grid2 about-cards stagger">
+      <article class="card">
         <div class="icon"><svg viewBox="0 0 24 24"><path d="M3 21h18"/><path d="M5 21V8l7-5 7 5v13"/><path d="M9 21v-6h6v6"/></svg></div>
         <h3>For real estate agents</h3>
         <p>Feel free to link to this site in a listing or share it directly with buyers — it covers HOA dues, community guidelines, governing documents, and board contact information, so questions about the HOA can usually be answered without a phone call.</p>
       </article>
-      <article class="card dark reveal">
-        <div class="icon" style="background:rgba(255,255,255,.1); color:var(--leaf);"><svg viewBox="0 0 24 24"><path d="M4 19V5"/><path d="M4 5h12l-2 3 2 3H4"/><path d="M4 19h16"/></svg></div>
+      <article class="card dark">
+        <div class="icon" style="background:rgba(255,255,255,.1); color:var(--leaf);"><svg viewBox="0 0 24 24"><path d="M12 21s-7-6.2-7-11.5a7 7 0 0 1 14 0C19 14.8 12 21 12 21z"/><circle cx="12" cy="9.5" r="2.5"/></svg></div>
         <h3>Where we are</h3>
         <p>Riverwood Trails sits in Deerfield Township, Warren County, at Kings Mills, OH 45034 — along the Little Miami River, just off the Kings Island exit.</p>
         <ul class="checks">
@@ -606,7 +266,6 @@
   </section>
 </div>
 
-<!-- RESIDENT RESOURCES -->
 <div class="band" id="resources">
   <section class="wrap">
     <div class="head-row reveal">
@@ -616,8 +275,9 @@
       </div>
       <p class="aside">Governing documents, dues information, and your HOA board — everything in one place.</p>
     </div>
-    <div class="grid3">
-      <article class="card reveal">
+    <div class="grid3 stagger">
+      <article class="card">
+        <span class="num">01</span>
         <div class="icon"><svg viewBox="0 0 24 24"><path d="M6 3h9l5 5v13a1 1 0 0 1-1 1H6a1 1 0 0 1-1-1V4a1 1 0 0 1 1-1z"/><path d="M14 3v6h6"/><path d="M9 13h6M9 17h6"/></svg></div>
         <h3>Governing Documents</h3>
         <p>Covenants, bylaws, and architectural standards that keep the neighborhood consistent and well cared for.</p>
@@ -629,7 +289,8 @@
           <li><a href="documents/new-resident-welcome.pdf" target="_blank" rel="noopener">New Resident Guide</a></li>
         </ul>
       </article>
-      <article class="card reveal">
+      <article class="card">
+        <span class="num">02</span>
         <div class="icon"><svg viewBox="0 0 24 24"><rect x="3" y="6" width="18" height="12" rx="2"/><circle cx="12" cy="12" r="2.5"/><path d="M7 12h.01M17 12h.01"/></svg></div>
         <h3>Dues Information</h3>
         <p>$350 per year, invoiced by April and covering the calendar year. See how dues are used and how to pay.</p>
@@ -640,14 +301,15 @@
           <li><a href="#dues">View payment info</a></li>
         </ul>
       </article>
-      <article class="card reveal">
+      <article class="card">
+        <span class="num">03</span>
         <div class="icon"><svg viewBox="0 0 24 24"><circle cx="9" cy="8" r="3.5"/><path d="M2.5 20a6.5 6.5 0 0 1 13 0"/><circle cx="17" cy="9" r="2.5"/><path d="M15.5 14.5a5 5 0 0 1 6 5"/></svg></div>
-        <h3>HOA Board</h3>
+        <h3>Board &amp; Committees</h3>
         <p>Volunteer neighbors who manage HOA business. Reach out directly with questions or requests.</p>
         <ul class="checks">
-          <li><a href="#board">Board of Directors</a></li>
-          <li><a href="#design-review-board">Design Review Board</a></li>
-          <li><a href="#grounds-committee">Grounds Committee</a></li>
+          <li><a href="board.html#board">Board of Directors</a></li>
+          <li><a href="board.html#design-review-board">Design Review Board</a></li>
+          <li><a href="board.html#grounds-committee">Grounds Committee</a></li>
           <li><a href="mailto:home@riverwoodtrails.com">home@riverwoodtrails.com</a></li>
         </ul>
       </article>
@@ -655,7 +317,6 @@
   </section>
 </div>
 
-<!-- DUES -->
 <div class="band dark dues-band" id="dues">
   <div class="bg"><img src="images/river-bank.jpg" alt="" aria-hidden="true" loading="lazy"></div>
   <section class="wrap">
@@ -665,11 +326,11 @@
         <h2>Annual dues are <em>$350</em>, invoiced every April.</h2>
         <p class="lede">Dues cover the calendar year (January–December) and fund shared expenses like common-area landscaping and reserves. Amounts may adjust slightly year to year based on association needs.</p>
         <div class="btn-row">
-          <a href="#contact" class="btn">Ask About Payment <span class="cap"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17L17 7M9 7h8v8"/></svg></span></a>
-          <a href="#faq-1" class="btn-text">Dues FAQ <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17L17 7M9 7h8v8"/></svg></a>
+          <a href="#contact" class="btn " >Ask About Payment <span class="cap"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17L17 7M9 7h8v8"/></svg></span></a>
+          <a href="faq.html#faq-1" class="btn-text" >Dues FAQ <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17L17 7M9 7h8v8"/></svg></a>
         </div>
       </div>
-      <div class="dues-list reveal">
+      <div class="dues-list stagger">
         <p>Where dues go</p>
         <div><svg viewBox="0 0 24 24"><path d="M12 3l8 4v5c0 5-3.5 8-8 9-4.5-1-8-4-8-9V7z"/></svg>HOA Insurance</div>
         <div><svg viewBox="0 0 24 24"><path d="M3 20h18"/><path d="M6 20v-6c0-2 1-3 3-3s3 1 3 3v6"/><path d="M14 20v-9c0-2 1-3 2.5-3S19 10 19 12v8"/></svg>Community Area Lawn Care</div>
@@ -680,298 +341,56 @@
   </section>
 </div>
 
-<!-- CALENDAR -->
-<div class="band sage">
-  <div class="wrap reveal">
-<section id="calendar">
-  <div class="section-head" style="max-width:80ch;">
-    <span class="eyebrow">Mark Your Calendar</span>
-    <h2>Community Calendar</h2>
-    <p>Recurring HOA dates throughout the year. Specific meeting dates are added here once the board schedules them.</p>
-  </div>
-
-  <div class="cal-wrap">
-    <div class="cal-header">
-      <div class="cal-nav">
-        <button id="calPrev" aria-label="Previous month">‹</button>
-        <button id="calNext" aria-label="Next month">›</button>
-      </div>
-      <h3 id="calTitle">Month Year</h3>
-      <button class="cal-today-btn" id="calToday">Today</button>
-    </div>
-    <div class="cal-weekdays">
-      <span>Sun</span><span>Mon</span><span>Tue</span><span>Wed</span><span>Thu</span><span>Fri</span><span>Sat</span>
-    </div>
-    <div class="cal-grid" id="calGrid"></div>
-    <div class="cal-legend">
-      <span><span class="dot" style="background:var(--forest);"></span> Board meeting / election</span>
-      <span><span class="dot" style="background:var(--river);"></span> Recurring HOA date</span>
-      <span><span class="dot" style="background:var(--clay);"></span> Today</span>
-    </div>
-  </div>
-
-  <div class="cal-modal-overlay" id="calModalOverlay">
-    <div class="cal-modal">
-      <button class="cal-modal-close" id="calModalClose" aria-label="Close">×</button>
-      <p class="cal-modal-date" id="calModalDate"></p>
-      <h3 id="calModalTitle"></h3>
-      <p class="cal-modal-detail" id="calModalDetail"></p>
-      <a class="btn btn-clay" id="calModalLink" style="display:none;"></a>
-    </div>
-  </div>
-
-  <p style="max-width:62ch; margin-top:28px; color:#4a4a43; font-size:.9rem; line-height:1.7;">
-    <strong>Recurring dates:</strong> the Annual Homeowners Meeting is held once a year, no later than 30 days before the close of the HOA's fiscal year. The Board of Trustees meets at least four times a year, one meeting per quarter. Annual dues invoices go out no later than April. <a class="cite" href="documents/covenants.pdf" target="_blank" rel="noopener" style="display:inline; margin:0;">Source: Code of Regulations →</a>
-  </p>
-  <p style="max-width:62ch; margin-top:14px; color:#4a4a43; font-size:.9rem; line-height:1.7;">
-    <strong>Meeting minutes:</strong> minutes from board meetings will be posted here as they become available following each meeting. Check back after upcoming meetings, or ask the board directly if you'd like to see recent minutes sooner.
-  </p>
-</section>
-
-  </div>
-</div>
-
-<!-- BOARD -->
-<div class="band" id="board">
+<div class="band sage topo" id="faq">
   <section class="wrap">
     <div class="head-row reveal">
       <div class="section-head">
-        <span class="tag">Your Neighbors</span>
-        <h2>Board of <em>Directors</em></h2>
+        <span class="tag">Quick Answers</span>
+        <h2>The questions <em>neighbors ask most</em></h2>
       </div>
-      <p class="aside">Elected by homeowners to two-year terms. A fully volunteer position.</p>
+      <a href="faq.html" class="btn-text" >All 22 questions <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17L17 7M9 7h8v8"/></svg></a>
     </div>
-    <div class="team">
-      <div class="card member reveal">
-        <div class="mono">TM</div>
-        <div><p class="role">Position TBD</p><h4>Tim Macy</h4><p>Officer role to be determined at the board's next meeting.</p></div>
-      </div>
-      <div class="card member reveal">
-        <div class="mono">AW</div>
-        <div><p class="role">Position TBD</p><h4>Amanda Wells</h4><p>Officer role to be determined at the board's next meeting.</p></div>
-      </div>
-      <div class="card member reveal">
-        <div class="mono">DK</div>
-        <div><p class="role">Position TBD</p><h4>Daniel Kostreva</h4><p>Officer role to be determined at the board's next meeting.</p></div>
-      </div>
-    </div>
-    <p class="note reveal" style="margin-top:32px; max-width:90ch; color:#3f4d45;">Board members are elected by homeowners to two-year terms to make sure Riverwood Trails' covenants are followed, annual dues are collected, HOA bills are paid, and the association keeps proper funds in reserve. It's a fully volunteer position that takes significant time throughout the year, and each member serves on behalf of the neighborhood as a whole. We ask residents to extend the same patience and courtesy they'd want themselves — board members are neighbors giving their own time to keep Riverwood Trails running well.</p>
-    <p class="note reveal">Following the recent election, the board has not yet met to assign specific officer positions (President, Treasurer, Secretary). This section will be updated once that's decided.</p>
-  </section>
-</div>
-
-<!-- DESIGN REVIEW BOARD -->
-<div class="band sage" id="design-review-board">
-  <section class="wrap">
-    <div class="split-copy reveal">
-      <div class="section-head">
-        <span class="tag">Design Review</span>
-        <h2>Design Review <em>Board</em></h2>
-      </div>
-      <p class="body">The Design Review Board is a separate, two-member board appointed by the Board of Directors that reviews and approves every application for exterior or grounds changes — fences, additions, decks, pools, paint, siding, landscaping, driveways, and garbage can screens. It exists to keep decisions on architectural standards consistent and fair across the neighborhood, and to protect the look and value of Riverwood Trails that residents count on. Like the Board of Directors, it's a volunteer position.</p>
-    </div>
-    <div class="callout reveal">
-      <div>
-        <h3>Planning a change? Start here.</h3>
-        <p>Every application is reviewed and voted on by the Design Review Board before work can begin. Questions about the process can go to the board at <a href="mailto:home@riverwoodtrails.com">home@riverwoodtrails.com</a>.</p>
-      </div>
-      <div class="btn-row">
-        <a href="https://38b33fdc-2fbb-45bb-8d5b-db62f2eab4e1.filesusr.com/ugd/629c19_28e2f6ca15c94cca86528ea7b258446a.pdf" class="btn" target="_blank" rel="noopener">Download PDF Application <span class="cap"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M12 4v11M7 10l5 5 5-5M5 20h14"/></svg></span></a>
-        <button type="button" class="btn btn-white" id="drbFormToggle">Fill It Out Online <span class="cap"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17L17 7M9 7h8v8"/></svg></span></button>
-      </div>
-    </div>
-
-    <div id="drbFormWrap" style="display:none;">
-      <div class="form-card">
-        <h3>Design Review Application</h3>
-        <p>Submit directly to the board — no need to print or mail anything. A photo of your site plan or sketch is welcome but not required.</p>
-        <form class="f" action="https://formsubmit.co/home@riverwoodtrails.com" method="POST" enctype="multipart/form-data">
-          <input type="hidden" name="_subject" value="Design Review Application — Riverwood Trails">
-          <input type="hidden" name="_captcha" value="false">
-          <input type="hidden" name="_template" value="table">
-          <div class="r2">
-            <input type="text" name="Name" placeholder="Your name" required>
-            <input type="text" name="Address" placeholder="Property address" required>
-          </div>
-          <div class="r2">
-            <input type="email" name="Email" placeholder="Email" required>
-            <input type="tel" name="Phone" placeholder="Phone (optional)">
-          </div>
-          <select name="Type of Improvement" required>
-            <option value="">Type of improvement…</option>
-            <option>Fence</option>
-            <option>Addition or Deck</option>
-            <option>Pool</option>
-            <option>Paint or Siding</option>
-            <option>Roof</option>
-            <option>Landscaping</option>
-            <option>Driveway</option>
-            <option>Garbage Can Screen/Enclosure</option>
-            <option>Mailbox</option>
-            <option>Other</option>
-          </select>
-          <textarea name="Description" placeholder="Describe the improvement — what you're doing and why" rows="3" required></textarea>
-          <div class="r3">
-            <input type="text" name="Color" placeholder="Color">
-            <input type="text" name="Materials" placeholder="Materials">
-            <input type="text" name="Dimensions" placeholder="Dimensions">
-          </div>
-          <input type="text" name="Estimated Cost" placeholder="Estimated cost">
-          <div>
-            <label>Site plan, sketch, or photo (optional)</label>
-            <input type="file" name="attachment" accept="image/*,.pdf">
-          </div>
-          <button type="submit" class="btn btn-dark">Submit Application <span class="cap"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17L17 7M9 7h8v8"/></svg></span></button>
-        </form>
-      </div>
-    </div>
-  </section>
-</div>
-
-<!-- GROUNDS COMMITTEE -->
-<div class="band" id="grounds-committee">
-  <section class="wrap">
-    <div class="split-copy reveal">
-      <div class="section-head">
-        <span class="tag">Get Involved</span>
-        <h2>Grounds <em>Committee</em></h2>
-      </div>
-      <p class="body">The Grounds Committee meets to source quotes for landscaping, lawn care, and general ground upkeep across Riverwood Trails' common areas, and helps coordinate the volunteers who pitch in on grounds projects throughout the year. Unlike the Board of Directors and the Design Review Board, this isn't an elected position — it's open to any resident who wants to get involved, no election required.</p>
-    </div>
-    <div class="callout reveal">
-      <div>
-        <h3>Want to get involved?</h3>
-        <p>If you're interested in joining the Grounds Committee, email the board at <a href="mailto:home@riverwoodtrails.com">home@riverwoodtrails.com</a> to let them know.</p>
-      </div>
-      <div class="btn-row">
-        <a href="mailto:home@riverwoodtrails.com" class="btn">Email the Board <span class="cap"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17L17 7M9 7h8v8"/></svg></span></a>
-      </div>
-    </div>
-  </section>
-</div>
-
-<!-- FAQ -->
-<div class="band sage">
-  <div class="wrap reveal">
-<section id="faq">
-  <div class="section-head">
-    <span class="eyebrow">Good to Know</span>
-    <h2>Frequently asked questions</h2>
-  </div>
-  <div>
-    <details id="faq-1" open>
-      <summary>When are HOA dues to be paid?</summary>
-      <p>Dues are due upon receipt of the annual invoice, mailed no later than April. They cover the current calendar year (January–December) and may fluctuate slightly year to year based on association expenses and reserve levels. Current annual dues are $350.</p>
-    </details>
-    <details id="faq-2">
-      <summary>Can I install a fence? If so, what kind is allowed?</summary>
-      <p>Only wood split-rail fencing is approved by the board. All fencing and other exterior changes must be approved before work is started.</p>
-      <a class="cite" href="documents/hoa-policy-clarification.pdf" target="_blank" rel="noopener">Source: HOA Policy Clarification — Fencing →</a>
-    </details>
-    <details id="faq-3">
-      <summary>Can I paint my trim, door, and shutters a different color?</summary>
-      <p>Yes, but the color must be pre-approved, and bold or exotic colors are not accepted.</p>
-      <a class="cite" href="documents/hoa-policy-clarification.pdf" target="_blank" rel="noopener">Source: HOA Policy Clarification — Doors and Shutters →</a>
-    </details>
-    <details id="faq-4">
-      <summary>Can I add on to my house or deck?</summary>
-      <p>Yes, but only after the HOA has approved design plans and all permits are obtained from local governments. No decks are allowed to extend past the width of the house, unless it's a staircase coming down from the deck.</p>
-      <a class="cite" href="documents/covenants.pdf" target="_blank" rel="noopener">Source: Covenants — Article V, Architectural Standards →</a>
-    </details>
-    <details id="faq-5">
-      <summary>Can I change the color of my roof or siding?</summary>
-      <p>Roof: no. Siding samples, along with trim color samples, must be approved through the HOA, unless it's for a repair where all colors match completely.</p>
-      <a class="cite" href="documents/hoa-policy-clarification.pdf" target="_blank" rel="noopener">Source: HOA Policy Clarification — Shingle Color →</a>
-    </details>
-    <details id="faq-6">
-      <summary>Can I make my landscaping different?</summary>
-      <p>Usually yes, but all plans need to be reviewed. Bold or exotic landscape designs aren't approved — they must blend well with what's typical in the neighborhood.</p>
-      <a class="cite" href="documents/covenants.pdf" target="_blank" rel="noopener">Source: Covenants — Article V, Architectural Standards →</a>
-    </details>
-    <details id="faq-7">
-      <summary>Can I install a swimming pool? If so, what kind?</summary>
-      <p>In-ground pools are allowed once the HOA approves your design plans and all local permits are issued. Above-ground pools that extend 12 inches or more above grade are not permitted. Hot tubs, saunas, and temporary, seasonal children's pools under 12 inches are fine — just remove seasonal kids' pools by Labor Day each year.</p>
-      <a class="cite" href="documents/hoa-policy-clarification.pdf" target="_blank" rel="noopener">Source: HOA Policy Clarification — Swimming Pools →</a>
-    </details>
-    <details id="faq-8">
-      <summary>Can I extend the width of my driveway?</summary>
-      <p>Yes, but it must be identical to the construction of your current driveway, with all local codes and permits in order before work proceeds.</p>
-      <a class="cite" href="documents/covenants.pdf" target="_blank" rel="noopener">Source: Covenants — Article V, Modifications →</a>
-    </details>
-    <details id="faq-9">
-      <summary>What's the process for getting approval for a home or yard change?</summary>
-      <p>Complete a Design Review Application and submit it to the board — by email or mail — before starting any work. Include the type and nature of the improvement, color, dimensions, estimated cost, location, and a scale drawing showing placement relative to your lot lines and home. The Design Review Board reviews and approves each application.</p>
+    <div class="quick-faq stagger">
+      <details id="faq-1">
+  <summary>When are HOA dues to be paid?</summary>
+  <p>Dues are due upon receipt of the annual invoice, mailed no later than April. They cover the current calendar year (January–December) and may fluctuate slightly year to year based on association expenses and reserve levels. Current annual dues are $350.</p>
+</details>
+<details id="faq-9">
+  <summary>What's the process for getting approval for a home or yard change?</summary>
+  <p>Complete a Design Review Application and submit it to the board — by email or mail — before starting any work. Include the type and nature of the improvement, color, dimensions, estimated cost, location, and a scale drawing showing placement relative to your lot lines and home. The Design Review Board reviews and approves each application.</p>
       <a class="cite" href="https://38b33fdc-2fbb-45bb-8d5b-db62f2eab4e1.filesusr.com/ugd/629c19_28e2f6ca15c94cca86528ea7b258446a.pdf" target="_blank" rel="noopener">Source: Design Review Application →</a>
-    </details>
-    <details id="faq-10">
-      <summary>What are the requirements for my mailbox?</summary>
-      <p>If your mailbox needs repair or replacement, it must be white, made of plastic or metal, and free from rust. It must be securely fastened to a weather-treated wooden post painted Sherwin Williams "Loggia" (color code SW7506) to match the neighborhood's original design.</p>
-      <a class="cite" href="documents/hoa-policy-clarification.pdf" target="_blank" rel="noopener">Source: HOA Policy Clarification — Mailbox →</a>
-    </details>
-    <details id="faq-11">
-      <summary>Where am I allowed to store my garbage cans?</summary>
-      <p>Garbage cans must be concealed from public view using one of three options: inside your garage, up against the back of your house, or up against the side of your house with one approved screen or enclosure. Garbage cans are not allowed in the driveway or front of the house, except within 24 hours before or after your scheduled trash pickup. Any screen or enclosure needs Design Review Board approval before you install it.</p>
+</details>
+<details id="faq-2">
+  <summary>Can I install a fence? If so, what kind is allowed?</summary>
+  <p>Only wood split-rail fencing is approved by the board. All fencing and other exterior changes must be approved before work is started.</p>
+      <a class="cite" href="documents/hoa-policy-clarification.pdf" target="_blank" rel="noopener">Source: HOA Policy Clarification — Fencing →</a>
+</details>
+<details id="faq-11">
+  <summary>Where am I allowed to store my garbage cans?</summary>
+  <p>Garbage cans must be concealed from public view using one of three options: inside your garage, up against the back of your house, or up against the side of your house with one approved screen or enclosure. Garbage cans are not allowed in the driveway or front of the house, except within 24 hours before or after your scheduled trash pickup. Any screen or enclosure needs Design Review Board approval before you install it.</p>
       <a class="cite" href="documents/garbage-can-storage-policy.pdf" target="_blank" rel="noopener">Source: Garbage Can Storage Policy →</a>
-    </details>
-    <details id="faq-12">
-      <summary>What are the rules for a garbage can screen or enclosure?</summary>
-      <p>Screens must be the same color as your house or trim, black, or white, and built from wood, composite, or PVC. Height can't exceed 50 inches and can't extend more than 50 inches from your house, with a length no more than 12 inches past your last can (up to 4 cans). Boards or slats can't have large gaps, the screen can't be used for anything other than can storage, and it must be approved by the Design Review Board before installation.</p>
-      <a class="cite" href="documents/garbage-can-storage-policy.pdf" target="_blank" rel="noopener">Source: Garbage Can Storage Policy — Screen/Enclosure Regulations →</a>
-    </details>
-    <details id="faq-13">
-      <summary>What happens if my garbage cans or screen aren't in compliance?</summary>
-      <p>The HOA will send a notification if your garbage placement or screen upkeep is out of compliance. A fine of $25 per month applies until it's corrected, up to a maximum of $200 per year.</p>
-      <a class="cite" href="documents/garbage-can-storage-policy.pdf" target="_blank" rel="noopener">Source: Garbage Can Storage Policy — Violations →</a>
-    </details>
-    <details id="faq-14">
-      <summary>Can I park a truck, RV, boat, or trailer at my house?</summary>
-      <p>A light pickup truck used as your personal vehicle is fine. But commercial vehicles, larger trucks, boats, trailers, campers, and mobile homes can't be parked or stored on the street or on any lot — unless fully enclosed and shielded from view — for more than 48 hours within any 30-day period. Any structure built to enclose or shield a vehicle needs Design Review Board approval before it goes up.</p>
-      <a class="cite" href="documents/covenants.pdf" target="_blank" rel="noopener">Source: Covenants — Article IV, Vehicles →</a>
-    </details>
-    <details id="faq-15">
-      <summary>Can I put up a satellite dish or antenna?</summary>
-      <p>Exterior antennas and satellite dishes generally aren't allowed, except satellite dishes under 24 inches in diameter, which are permitted if positioned to minimize visibility from the street.</p>
-      <a class="cite" href="documents/covenants.pdf" target="_blank" rel="noopener">Source: Covenants — Article IV, Antennae →</a>
-    </details>
-    <details id="faq-16">
-      <summary>Can I run a business out of my home?</summary>
-      <p>No business, trade, occupation, or profession may be conducted or established on your property without prior written approval from the board.</p>
-      <a class="cite" href="documents/covenants.pdf" target="_blank" rel="noopener">Source: Covenants — Article IV, Business →</a>
-    </details>
-    <details id="faq-17">
-      <summary>Are there restrictions on yard signs?</summary>
-      <p>Signs generally aren't permitted, with a few exceptions: official street/identification signs, and one temporary real estate sign no larger than six square feet advertising a home for sale.</p>
-      <a class="cite" href="documents/hoa-policy-clarification.pdf" target="_blank" rel="noopener">Source: HOA Policy Clarification — Signs →</a>
-    </details>
-    <details id="faq-18">
-      <summary>What happens if I don't pay my dues on time?</summary>
-      <p>Unpaid assessments accrue a late charge, and the HOA may pursue collection, including placing a lien on the lot, if payment remains outstanding.</p>
-      <a class="cite" href="documents/covenants.pdf" target="_blank" rel="noopener">Source: Covenants — Article IX, Assessments →</a>
-    </details>
-    <details id="faq-19">
-      <summary>What does the HOA Board do?</summary>
-      <p>The <a href="#board" style="text-decoration:underline;">Board of Directors</a> is elected by homeowners to two-year terms to make sure Riverwood Trails' covenants are followed, dues are collected, bills are paid, and the HOA keeps proper funds in reserve. It's a volunteer position.</p>
-    </details>
-    <details id="faq-20">
-      <summary>What is the Design Review Board?</summary>
-      <p>The <a href="#design-review-board" style="text-decoration:underline;">Design Review Board</a> is a separate, two-member board appointed by the Board of Directors that reviews and approves every application for exterior or grounds changes, keeping architectural standards consistent across the neighborhood. It's also a volunteer position.</p>
-    </details>
-    <details id="faq-21">
-      <summary>What is the Grounds Committee?</summary>
-      <p>The <a href="#grounds-committee" style="text-decoration:underline;">Grounds Committee</a> sources quotes for landscaping, lawn care, and general ground upkeep, and coordinates volunteers for grounds projects. Unlike the Board and Design Review Board, it's open to any resident — no election required.</p>
-    </details>
-    <details id="faq-22">
-      <summary>How do I contact the board?</summary>
-      <p>Use the <a href="#contact" style="text-decoration:underline;">contact form</a> at the bottom of this page, or email the board directly at <a href="mailto:home@riverwoodtrails.com" style="text-decoration:underline;">home@riverwoodtrails.com</a>. Please allow 1–2 weeks for a response on design review requests.</p>
-      <a class="cite" href="documents/garbage-can-storage-policy.pdf" target="_blank" rel="noopener">Source: Garbage Can Storage Policy — Resolution Letter →</a>
-    </details>
-  </div>
-</section>
-
-  </div>
+</details>
+<details id="faq-7">
+  <summary>Can I install a swimming pool? If so, what kind?</summary>
+  <p>In-ground pools are allowed once the HOA approves your design plans and all local permits are issued. Above-ground pools that extend 12 inches or more above grade are not permitted. Hot tubs, saunas, and temporary, seasonal children's pools under 12 inches are fine — just remove seasonal kids' pools by Labor Day each year.</p>
+      <a class="cite" href="documents/hoa-policy-clarification.pdf" target="_blank" rel="noopener">Source: HOA Policy Clarification — Swimming Pools →</a>
+</details>
+<details id="faq-3">
+  <summary>Can I paint my trim, door, and shutters a different color?</summary>
+  <p>Yes, but the color must be pre-approved, and bold or exotic colors are not accepted.</p>
+      <a class="cite" href="documents/hoa-policy-clarification.pdf" target="_blank" rel="noopener">Source: HOA Policy Clarification — Doors and Shutters →</a>
+</details>
+    </div>
+    <div class="faq-cta reveal">
+      <div>
+        <h3>Need the full rulebook?</h3>
+        <p>Fences, paint, pools, mailboxes, garbage cans, parking, signs, dues, and who does what — all in one searchable place.</p>
+      </div>
+      <a href="faq.html" class="btn " >Browse the full FAQ <span class="cap"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17L17 7M9 7h8v8"/></svg></span></a>
+    </div>
+  </section>
 </div>
 
-<!-- GALLERY -->
 <div class="band" id="gallery">
   <section class="wrap">
     <div class="head-row reveal">
@@ -981,27 +400,25 @@
       </div>
       <p class="aside">Scenes from the Little Miami River valley and Kings Island — the backdrop to everyday life in Riverwood Trails.</p>
     </div>
-    <div class="gallery reveal">
-      <figure><img src="images/ki-aerial.jpg" alt="Aerial view of Kings Island amusement park" loading="lazy"><figcaption>Kings Island from above</figcaption></figure>
+    <div class="gallery stagger">
+      <figure><img src="images/river.jpg" alt="Kayakers paddling the Little Miami River near Loveland, Ohio" loading="lazy"><figcaption>Kayaking the Little Miami</figcaption></figure>
       <figure><img src="images/creek.jpg" alt="O'Bannon Creek meeting the Little Miami River" loading="lazy"><figcaption>O'Bannon Creek meets the Little Miami</figcaption></figure>
       <figure><img src="images/ki-night.jpg" alt="Kings Island's Eiffel Tower and fountains lit at night" loading="lazy"><figcaption>Kings Island at night</figcaption></figure>
       <figure><img src="images/path.jpg" alt="Wooded footpath down to the Little Miami River" loading="lazy"><figcaption>Footpath to the river</figcaption></figure>
       <figure><img src="images/ki-winterfest.jpg" alt="Kings Island's Eiffel Tower and carousel during WinterFest" loading="lazy"><figcaption>WinterFest at Kings Island</figcaption></figure>
+      <figure><img src="images/ki-aerial.jpg" alt="Aerial view of Kings Island amusement park" loading="lazy"><figcaption>Kings Island from above</figcaption></figure>
       <figure><img src="images/bridge.jpg" alt="Trestle bridge on the Little Miami Scenic Trail" loading="lazy"><figcaption>Little Miami Scenic Trail</figcaption></figure>
       <figure><img src="images/fort-ancient.jpg" alt="Fort Ancient earthworks above the Little Miami River" loading="lazy"><figcaption>Fort Ancient earthworks</figcaption></figure>
-      <figure><img src="images/ki-clock.jpg" alt="The floral clock at Kings Island" loading="lazy"><figcaption>Kings Island floral clock</figcaption></figure>
     </div>
   </section>
 </div>
-
-<!-- NEWSLETTER -->
-<div class="newsletter">
+<div class="newsletter topo dark">
   <div class="wrap">
-    <div>
+    <div class="reveal">
       <h3>Stay in the loop</h3>
       <p>Get occasional neighborhood updates by email — dues reminders, announcements, and anything else worth knowing.</p>
     </div>
-    <form action="https://formsubmit.co/home@riverwoodtrails.com" method="POST">
+    <form action="https://formsubmit.co/home@riverwoodtrails.com" method="POST" class="reveal">
       <input type="hidden" name="_subject" value="Newsletter signup — Riverwood Trails website">
       <input type="hidden" name="_captcha" value="false">
       <input type="email" name="Email" placeholder="Your email address" required>
@@ -1009,9 +426,7 @@
     </form>
   </div>
 </div>
-
-<!-- FOOTER / CONTACT -->
-<footer id="contact">
+<footer id="contact" class="topo dark">
   <div class="wrap">
     <div class="footer-grid">
       <div>
@@ -1030,15 +445,15 @@
       </div>
       <div class="col">
         <h5>Quick Links</h5>
-        <a href="#about">About Riverwood Trails</a>
-        <a href="#gallery">Gallery</a>
-        <a href="#announcements">Announcements</a>
-        <a href="#dues">Dues &amp; Payments</a>
-        <a href="#calendar">Calendar</a>
-        <a href="#board">Board Directory</a>
-        <a href="#design-review-board">Design Review Board</a>
-        <a href="#grounds-committee">Grounds Committee</a>
-        <a href="#faq">FAQ</a>
+        <a href="index.html#about">About Riverwood Trails</a>
+        <a href="index.html#announcements">Announcements</a>
+        <a href="index.html#dues">Dues &amp; Payments</a>
+        <a href="calendar.html">Calendar</a>
+        <a href="board.html">Board of Directors</a>
+        <a href="board.html#design-review-board">Design Review Board</a>
+        <a href="board.html#grounds-committee">Grounds Committee</a>
+        <a href="faq.html">FAQ</a>
+        <a href="index.html#gallery">Gallery</a>
         <a href="mailto:home@riverwoodtrails.com?subject=Concern%20or%20Violation%20Report">Report a Concern</a>
       </div>
       <div class="col">
@@ -1057,7 +472,7 @@
       </div>
     </div>
     <p class="fine">We only use the email addresses submitted through this site to respond to you or send occasional HOA updates — never sold or shared. Forms are processed by FormSubmit, a third-party form service; see their privacy policy for details on how submissions are handled in transit.</p>
-    <p class="fine" style="margin-top:12px;">Photography via Wikimedia Commons: Little Miami River and Scenic Trail by <a href="https://commons.wikimedia.org/wiki/File:Little_miami_river_loveland_OH_foto_by_andy_hemmer_cincinnati.jpg" target="_blank" rel="noopener">Andy Hemmer</a>, <a href="https://commons.wikimedia.org/wiki/File:Leaving_Loveland,_Ohio,_on_Little_Miami_Scenic_Trail.jpg" target="_blank" rel="noopener">Minh Nguyen</a> and <a href="https://commons.wikimedia.org/wiki/File:Little_Miami_Scenic_Trail,_crossing_Little_Miami_near_Xenia,_OH.jpg" target="_blank" rel="noopener">LittleT889</a> (CC BY-SA 4.0); Peters Cartridge Factory by <a href="https://commons.wikimedia.org/wiki/File:Hamilton_Township_-_Peters_Cartridge_Factory_(OHPTC).jpg" target="_blank" rel="noopener">Ohio Redevelopment Projects – ODSA</a> (CC BY 2.0); Kings Island by <a href="https://commons.wikimedia.org/wiki/File:Orion_(Kings_Island)_5.jpg" target="_blank" rel="noopener">DD Lover</a> (CC0), <a href="https://commons.wikimedia.org/wiki/File:Kings_Island_Eiffel_Tower_at_night.jpg" target="_blank" rel="noopener">Eli Duke</a> (CC BY-SA 2.0), <a href="https://commons.wikimedia.org/wiki/File:Orion_(Kings_Island)_1.jpg" target="_blank" rel="noopener">Jeremy Thompson</a> (CC BY 2.0) and <a href="https://commons.wikimedia.org/wiki/File:Kings_Island_Eiffel_Tower_and_Carousel_(2019).jpg" target="_blank" rel="noopener">Fritzmann2002</a> (CC BY-SA 4.0); Kings High School by <a href="https://commons.wikimedia.org/wiki/File:Kings_High_School_(Kings_Mills,_Ohio).jpg" target="_blank" rel="noopener">AviationEnzo</a> (CC0); Fort Ancient by <a href="https://commons.wikimedia.org/wiki/File:Fort_Ancient_Earthworks.jpg" target="_blank" rel="noopener">xiquinhosilva</a> (CC BY 2.0).</p>
+    <p class="fine" style="margin-top:12px;">Area photography via Wikimedia Commons: Little Miami River and Scenic Trail by <a href="https://commons.wikimedia.org/wiki/File:Little_miami_river_loveland_OH_foto_by_andy_hemmer_cincinnati.jpg" target="_blank" rel="noopener">Andy Hemmer</a>, <a href="https://commons.wikimedia.org/wiki/File:Leaving_Loveland,_Ohio,_on_Little_Miami_Scenic_Trail.jpg" target="_blank" rel="noopener">Minh Nguyen</a> and <a href="https://commons.wikimedia.org/wiki/File:Little_Miami_Scenic_Trail,_crossing_Little_Miami_near_Xenia,_OH.jpg" target="_blank" rel="noopener">LittleT889</a> (CC BY-SA 4.0); Peters Cartridge Factory by <a href="https://commons.wikimedia.org/wiki/File:Hamilton_Township_-_Peters_Cartridge_Factory_(OHPTC).jpg" target="_blank" rel="noopener">Ohio Redevelopment Projects – ODSA</a> (CC BY 2.0); Kings Island by <a href="https://commons.wikimedia.org/wiki/File:Orion_(Kings_Island)_5.jpg" target="_blank" rel="noopener">DD Lover</a> (CC0), <a href="https://commons.wikimedia.org/wiki/File:Kings_Island_Eiffel_Tower_at_night.jpg" target="_blank" rel="noopener">Eli Duke</a> (CC BY-SA 2.0), <a href="https://commons.wikimedia.org/wiki/File:Orion_(Kings_Island)_1.jpg" target="_blank" rel="noopener">Jeremy Thompson</a> (CC BY 2.0) and <a href="https://commons.wikimedia.org/wiki/File:Kings_Island_Eiffel_Tower_and_Carousel_(2019).jpg" target="_blank" rel="noopener">Fritzmann2002</a> (CC BY-SA 4.0); Kings High School by <a href="https://commons.wikimedia.org/wiki/File:Kings_High_School_(Kings_Mills,_Ohio).jpg" target="_blank" rel="noopener">AviationEnzo</a> (CC0); Fort Ancient by <a href="https://commons.wikimedia.org/wiki/File:Fort_Ancient_Earthworks.jpg" target="_blank" rel="noopener">xiquinhosilva</a> (CC BY 2.0).</p>
     <div class="foot-bottom">
       <span>© 2026 Riverwood Trails Homeowners Association · 76 Homes · Kings Mills, Ohio</span>
       <span>Site last updated September 2026</span>
@@ -1070,291 +485,6 @@
   <a href="#top" aria-label="Back to top"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M12 19V5M5 12l7-7 7 7"/></svg></a>
   <a href="mailto:home@riverwoodtrails.com" aria-label="Email the board"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 7l9 6 9-6"/></svg></a>
 </div>
-
-<script>
-  const menuToggle = document.getElementById('menuToggle');
-  const navLinks = document.getElementById('navLinks');
-
-  menuToggle.addEventListener('click', () => {
-    const isOpen = navLinks.classList.toggle('open');
-    menuToggle.classList.toggle('open', isOpen);
-    menuToggle.setAttribute('aria-expanded', isOpen);
-  });
-
-  // Close mobile menu after tapping a link
-  navLinks.querySelectorAll('a').forEach(link => {
-    link.addEventListener('click', () => {
-      navLinks.classList.remove('open');
-      menuToggle.classList.remove('open');
-    });
-  });
-
-  // ---- SITE SEARCH ----
-  const searchIndex = [
-    { title: "HOA News / Announcements", tag: "Section", href: "#announcements", keywords: "announcements news updates board notices" },
-    { title: "HOA Dues", tag: "Section", href: "#dues", keywords: "dues payment 350 annual assessment invoice insurance lawn care reserve landscape" },
-    { title: "Community Calendar", tag: "Section", href: "#calendar", keywords: "calendar meetings annual meeting quarterly board meeting minutes" },
-    { title: "Board of Directors", tag: "Section", href: "#board", keywords: "board directors president treasurer secretary tim macy amanda wells daniel kostreva" },
-    { title: "Design Review Board", tag: "Section", href: "#design-review-board", keywords: "design review board drb approval application architectural" },
-    { title: "Grounds Committee", tag: "Section", href: "#grounds-committee", keywords: "grounds committee volunteer landscaping lawn care quotes" },
-    { title: "Neighborhood Gallery", tag: "Section", href: "#gallery", keywords: "gallery photos pictures neighborhood" },
-    { title: "About Riverwood Trails", tag: "Section", href: "#about", keywords: "about history real estate realtor selling home" },
-    { title: "Contact the Board", tag: "Section", href: "#contact", keywords: "contact email message form" },
-    { title: "Covenants (Full Declaration)", tag: "Document", href: "documents/covenants.pdf", keywords: "covenants declaration restrictions easements articles of incorporation code of regulations design review board bylaws", external: true },
-    { title: "HOA Policy Clarification", tag: "Document", href: "documents/hoa-policy-clarification.pdf", keywords: "policy clarification signs trash fencing mailbox pools shingle siding shutters fees liens", external: true },
-    { title: "Garbage Can Storage Policy", tag: "Document", href: "documents/garbage-can-storage-policy.pdf", keywords: "garbage can trash storage screen enclosure policy violations fine", external: true },
-    { title: "Design Review Application", tag: "Document", href: "https://38b33fdc-2fbb-45bb-8d5b-db62f2eab4e1.filesusr.com/ugd/629c19_28e2f6ca15c94cca86528ea7b258446a.pdf", keywords: "design review application form approval submit", external: true },
-    { title: "New Resident Welcome Guide", tag: "Document", href: "documents/new-resident-welcome.pdf", keywords: "new resident welcome guide moving in trash day new to neighborhood", external: true },
-    { title: "When are HOA dues to be paid?", tag: "FAQ", href: "#faq-1", keywords: "dues due date april 350 payment" },
-    { title: "Can I install a fence? If so, what kind is allowed?", tag: "FAQ", href: "#faq-2", keywords: "fence fencing split rail" },
-    { title: "Can I paint my trim, door, and shutters a different color?", tag: "FAQ", href: "#faq-3", keywords: "paint trim door shutters color" },
-    { title: "Can I add on to my house or deck?", tag: "FAQ", href: "#faq-4", keywords: "addition deck add on" },
-    { title: "Can I change the color of my roof or siding?", tag: "FAQ", href: "#faq-5", keywords: "roof siding color shingle" },
-    { title: "Can I make my landscaping different?", tag: "FAQ", href: "#faq-6", keywords: "landscaping landscape yard" },
-    { title: "Can I install a swimming pool? If so, what kind?", tag: "FAQ", href: "#faq-7", keywords: "pool swimming pool above ground in ground hot tub" },
-    { title: "Can I extend the width of my driveway?", tag: "FAQ", href: "#faq-8", keywords: "driveway widen extend" },
-    { title: "What's the process for getting approval for a home or yard change?", tag: "FAQ", href: "#faq-9", keywords: "approval process design review application submit" },
-    { title: "What are the requirements for my mailbox?", tag: "FAQ", href: "#faq-10", keywords: "mailbox post color white loggia" },
-    { title: "Where am I allowed to store my garbage cans?", tag: "FAQ", href: "#faq-11", keywords: "garbage can storage location trash" },
-    { title: "What are the rules for a garbage can screen or enclosure?", tag: "FAQ", href: "#faq-12", keywords: "garbage can screen enclosure dimensions materials" },
-    { title: "What happens if my garbage cans or screen aren't in compliance?", tag: "FAQ", href: "#faq-13", keywords: "garbage can violation fine compliance" },
-    { title: "Can I park a truck, RV, boat, or trailer at my house?", tag: "FAQ", href: "#faq-14", keywords: "truck rv boat trailer vehicle parking pickup" },
-    { title: "Can I put up a satellite dish or antenna?", tag: "FAQ", href: "#faq-15", keywords: "satellite dish antenna" },
-    { title: "Can I run a business out of my home?", tag: "FAQ", href: "#faq-16", keywords: "business home occupation" },
-    { title: "Are there restrictions on yard signs?", tag: "FAQ", href: "#faq-17", keywords: "signs yard sign real estate" },
-    { title: "What happens if I don't pay my dues on time?", tag: "FAQ", href: "#faq-18", keywords: "late dues unpaid fee lien" },
-    { title: "What does the HOA Board do?", tag: "FAQ", href: "#faq-19", keywords: "board of directors role duties" },
-    { title: "What is the Design Review Board?", tag: "FAQ", href: "#faq-20", keywords: "design review board role members" },
-    { title: "What is the Grounds Committee?", tag: "FAQ", href: "#faq-21", keywords: "grounds committee role volunteer" },
-    { title: "How do I contact the board?", tag: "FAQ", href: "#faq-22", keywords: "contact email board" },
-  ];
-
-  const searchToggle = document.getElementById('searchToggle');
-  const searchPanel = document.getElementById('searchPanel');
-  const searchInput = document.getElementById('searchInput');
-  const searchResults = document.getElementById('searchResults');
-
-  function renderResults(query) {
-    const q = query.trim().toLowerCase();
-    if (!q) { searchResults.innerHTML = ''; return; }
-    const matches = searchIndex.filter(item =>
-      item.title.toLowerCase().includes(q) || item.keywords.toLowerCase().includes(q)
-    ).slice(0, 8);
-    if (matches.length === 0) {
-      searchResults.innerHTML = '<div class="search-empty">No matches — try a different word.</div>';
-      return;
-    }
-    searchResults.innerHTML = matches.map(item =>
-      `<a class="search-result" data-href="${item.href}" data-external="${!!item.external}">
-        <span class="r-title">${item.title}</span>
-        <span class="r-tag">${item.tag}</span>
-      </a>`
-    ).join('');
-    searchResults.querySelectorAll('.search-result').forEach(el => {
-      el.addEventListener('click', () => goToResult(el.dataset.href, el.dataset.external === 'true'));
-    });
-  }
-
-  function goToResult(href, external) {
-    closeSearch();
-    if (external) {
-      window.open(href, '_blank', 'noopener');
-      return;
-    }
-    if (href.startsWith('#faq-')) {
-      const details = document.getElementById(href.slice(1));
-      if (details) {
-        details.setAttribute('open', '');
-        details.scrollIntoView({ behavior: 'smooth', block: 'center' });
-      }
-    } else {
-      const target = document.querySelector(href);
-      if (target) target.scrollIntoView({ behavior: 'smooth' });
-    }
-  }
-
-  function openSearch() {
-    searchPanel.classList.add('open');
-    setTimeout(() => searchInput.focus(), 50);
-  }
-  function closeSearch() {
-    searchPanel.classList.remove('open');
-    searchInput.value = '';
-    searchResults.innerHTML = '';
-  }
-
-  searchToggle.addEventListener('click', (e) => {
-    e.stopPropagation();
-    searchPanel.classList.contains('open') ? closeSearch() : openSearch();
-  });
-  searchInput.addEventListener('input', (e) => renderResults(e.target.value));
-  document.addEventListener('click', (e) => {
-    if (!searchPanel.contains(e.target) && e.target !== searchToggle) closeSearch();
-  });
-  document.addEventListener('keydown', (e) => {
-    if (e.key === 'Escape') closeSearch();
-  });
-
-  // ---- COMMUNITY CALENDAR ----
-  const calGrid = document.getElementById('calGrid');
-  const calTitle = document.getElementById('calTitle');
-  const calPrev = document.getElementById('calPrev');
-  const calNext = document.getElementById('calNext');
-  const calToday = document.getElementById('calToday');
-
-  const monthNames = ["January","February","March","April","May","June","July","August","September","October","November","December"];
-  const today = new Date();
-  let viewYear = today.getFullYear();
-  let viewMonth = today.getMonth();
-
-  const calEvents = [
-    { year: 2026, month: 7, day: 29, label: "Annual HOA Meeting — new board elected",
-      detail: "Doug Godby (President) and John Cook (Treasurer) completed their terms. Tim Macy and Daniel Kostreva were elected to the board, and Amanda Wells continues her term. Officer positions (President, Treasurer, Secretary) will be assigned at the board's next meeting. Thank you to Doug and John for their service, and welcome to Tim and Daniel.",
-      link: { label: "Read the full announcement", href: "#announcements" } }
-  ];
-
-  const duesRecurringEvent = {
-    label: "Dues invoiced this month",
-    detail: "Annual HOA dues invoices are mailed no later than April each year, covering the calendar year January through December. Current annual dues are $350.",
-    link: { label: "See dues details", href: "#dues" }
-  };
-
-  function renderCalendar(year, month) {
-    calTitle.textContent = monthNames[month] + " " + year;
-    calGrid.innerHTML = '';
-
-    const firstDay = new Date(year, month, 1).getDay();
-    const daysInMonth = new Date(year, month + 1, 0).getDate();
-    const isCurrentMonth = (year === today.getFullYear() && month === today.getMonth());
-    const isAprilView = (month === 3);
-
-    for (let i = 0; i < firstDay; i++) {
-      const cell = document.createElement('div');
-      cell.className = 'cal-day empty';
-      calGrid.appendChild(cell);
-    }
-
-    for (let d = 1; d <= daysInMonth; d++) {
-      const cell = document.createElement('div');
-      cell.className = 'cal-day';
-      if (isCurrentMonth && d === today.getDate()) cell.classList.add('today');
-
-      const num = document.createElement('span');
-      num.className = 'cal-daynum';
-      num.textContent = d;
-      cell.appendChild(num);
-
-      if (isAprilView && d === 1) {
-        const ev = document.createElement('span');
-        ev.className = 'cal-event recurring';
-        ev.textContent = duesRecurringEvent.label;
-        ev.addEventListener('click', (e) => {
-          e.stopPropagation();
-          openCalModal(monthNames[month] + " 1, " + year, duesRecurringEvent.label, duesRecurringEvent.detail, duesRecurringEvent.link);
-        });
-        cell.appendChild(ev);
-      }
-
-      const dateEvents = calEvents.filter(e => e.year === year && e.month === month && e.day === d);
-      dateEvents.forEach(e => {
-        const ev = document.createElement('span');
-        ev.className = 'cal-event';
-        ev.textContent = e.label;
-        ev.addEventListener('click', (evt) => {
-          evt.stopPropagation();
-          openCalModal(monthNames[month] + " " + d + ", " + year, e.label, e.detail, e.link);
-        });
-        cell.appendChild(ev);
-      });
-
-      calGrid.appendChild(cell);
-    }
-
-    const totalCells = firstDay + daysInMonth;
-    const remainder = totalCells % 7;
-    if (remainder !== 0) {
-      for (let i = 0; i < 7 - remainder; i++) {
-        const cell = document.createElement('div');
-        cell.className = 'cal-day empty';
-        calGrid.appendChild(cell);
-      }
-    }
-  }
-
-  calPrev.addEventListener('click', () => {
-    viewMonth--;
-    if (viewMonth < 0) { viewMonth = 11; viewYear--; }
-    renderCalendar(viewYear, viewMonth);
-  });
-  calNext.addEventListener('click', () => {
-    viewMonth++;
-    if (viewMonth > 11) { viewMonth = 0; viewYear++; }
-    renderCalendar(viewYear, viewMonth);
-  });
-  calToday.addEventListener('click', () => {
-    viewYear = today.getFullYear();
-    viewMonth = today.getMonth();
-    renderCalendar(viewYear, viewMonth);
-  });
-
-  const calModalOverlay = document.getElementById('calModalOverlay');
-  const calModalClose = document.getElementById('calModalClose');
-  const calModalDate = document.getElementById('calModalDate');
-  const calModalTitle = document.getElementById('calModalTitle');
-  const calModalDetail = document.getElementById('calModalDetail');
-  const calModalLink = document.getElementById('calModalLink');
-
-  function openCalModal(dateLabel, title, detail, link) {
-    calModalDate.textContent = dateLabel;
-    calModalTitle.textContent = title;
-    calModalDetail.textContent = detail;
-    if (link) {
-      calModalLink.textContent = link.label;
-      calModalLink.href = link.href;
-      calModalLink.style.display = 'inline-flex';
-      calModalLink.onclick = () => closeCalModal();
-    } else {
-      calModalLink.style.display = 'none';
-    }
-    calModalOverlay.classList.add('open');
-  }
-  function closeCalModal() {
-    calModalOverlay.classList.remove('open');
-  }
-  calModalClose.addEventListener('click', closeCalModal);
-  calModalOverlay.addEventListener('click', (e) => {
-    if (e.target === calModalOverlay) closeCalModal();
-  });
-  document.addEventListener('keydown', (e) => {
-    if (e.key === 'Escape') closeCalModal();
-  });
-
-  renderCalendar(viewYear, viewMonth);
-
-  // ---- DRB FORM TOGGLE ----
-  const drbFormToggle = document.getElementById('drbFormToggle');
-  const drbFormWrap = document.getElementById('drbFormWrap');
-  if (drbFormToggle) {
-    drbFormToggle.addEventListener('click', () => {
-      const showing = drbFormWrap.style.display !== 'none';
-      drbFormWrap.style.display = showing ? 'none' : 'block';
-      drbFormToggle.textContent = showing ? 'Fill It Out Online' : 'Hide Form';
-      if (!showing) drbFormWrap.scrollIntoView({ behavior: 'smooth', block: 'start' });
-    });
-  }
-</script>
-
-<script>
-  // Fade-up reveal
-  const io = new IntersectionObserver((entries) => {
-    entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); } });
-  }, { threshold: 0.08, rootMargin: '0px 0px -40px 0px' });
-  document.querySelectorAll('.reveal').forEach(el => io.observe(el));
-  // Mobile: tap "Documents" to toggle its list
-  const fab = document.querySelector('.fab');
-  const fabCheck = () => fab.classList.toggle('show', window.scrollY > 400);
-  window.addEventListener('scroll', fabCheck, { passive: true }); fabCheck();
-  document.querySelectorAll('.dd > button').forEach(b => b.addEventListener('click', () => b.parentElement.classList.toggle('open')));
-</script>
+<script src="js/site.js"></script>
 </body>
 </html>
