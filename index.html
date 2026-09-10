@@ -348,7 +348,9 @@
   .jak-credit img{height:38px; width:auto;}
 
   /* floating action */
-  .fab{position:fixed; right:22px; bottom:22px; z-index:55; display:flex; flex-direction:column; gap:4px; background:var(--forest-deep); border:1px solid var(--line-dark); border-radius:999px; padding:6px; box-shadow:0 18px 40px -16px rgba(14,29,20,.6);}
+  .fab{position:fixed; right:22px; bottom:22px; z-index:55; opacity:0; transform:translateY(12px); pointer-events:none; transition:opacity .3s, transform .3s;}
+  .fab.show{opacity:1; transform:none; pointer-events:auto;}
+  .fab{ display:flex; flex-direction:column; gap:4px; background:var(--forest-deep); border:1px solid var(--line-dark); border-radius:999px; padding:6px; box-shadow:0 18px 40px -16px rgba(14,29,20,.6);}
   .fab a{width:44px; height:44px; border-radius:50%; display:flex; align-items:center; justify-content:center; color:#fff; text-decoration:none; transition:background .15s, color .15s;}
   .fab a:hover{background:var(--leaf); color:var(--forest-deep);}
   .fab a svg{width:18px; height:18px;}
@@ -1349,6 +1351,9 @@
   }, { threshold: 0.08, rootMargin: '0px 0px -40px 0px' });
   document.querySelectorAll('.reveal').forEach(el => io.observe(el));
   // Mobile: tap "Documents" to toggle its list
+  const fab = document.querySelector('.fab');
+  const fabCheck = () => fab.classList.toggle('show', window.scrollY > 400);
+  window.addEventListener('scroll', fabCheck, { passive: true }); fabCheck();
   document.querySelectorAll('.dd > button').forEach(b => b.addEventListener('click', () => b.parentElement.classList.toggle('open')));
 </script>
 </body>
